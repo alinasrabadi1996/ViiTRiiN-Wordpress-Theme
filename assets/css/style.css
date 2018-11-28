@@ -6956,6 +6956,12 @@ PRODUCT SINGLE
     transition: all .3s ease 0s;
 }
 
+.configure-summary-container .button.deactive {
+    filter: grayscale(.9);
+    user-select: none;
+    opacity: .8;
+}
+
 .configure-summary-container .button:hover {
     background-color: #3c7eec !important;
     transition: all .4s ease 0s;
@@ -8711,6 +8717,7 @@ STOCK NOTIFIER
     border-radius: 3px;
     font-weight: bold;
     border: 2px solid #4489fb;
+    background: #f8f8f8bf;
 }
 
 .icon-notifications_active {

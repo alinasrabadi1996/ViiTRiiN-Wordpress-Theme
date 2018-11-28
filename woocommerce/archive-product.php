@@ -220,11 +220,13 @@
 				$stockVariation.css({
 					display: 'none',
 				});
+				$('.configure-summary-container .button').removeClass('deactive');
 			}
 			else {
 				$stockVariation.css({
 					display: '',
 				});
+				$('.configure-summary-container .button').addClass('deactive');
 			}
 		};
 
