@@ -216,12 +216,12 @@
 			console.log('onShowVariation: %o ', {purchasable});
 			if (purchasable) {
 				$stockVariation.css({
-					display: 'none';
+					display: 'none',
 				});
 			}
 			else {
 				$stockVariation.css({
-					display: 'block';
+					display: 'block',
 				});
 			}
 		};
