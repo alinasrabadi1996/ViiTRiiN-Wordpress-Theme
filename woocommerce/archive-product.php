@@ -59,7 +59,7 @@
 			$image = $intro_image['url'];
 		}
 		else {
-		$image = site_url()."/wp-content/uploads/2018/03/categories-header.jpg";
+			$image = site_url()."/wp-content/uploads/2018/03/categories-header.jpg";
 		}
 	?>
 	<div style="background-image: url(<?php echo $image; ?>)" class="categories-header-slider <?php if($term_children) { echo "has-fixbar"; } ?>">
@@ -197,6 +197,43 @@
 			jQuery(".categories-header-slider").removeClass("has-fixbar");
 		}
 	});
+</script>
+
+<script>
+	(function ($) {
+		'use strict';
+  
+		const wc_variation_form = $.fn.wc_variation_form;
+
+		if (!wc_variation_form) {
+			console.log('wc_variation_form not found!')
+			return;
+		}
+
+		const onShowVariation = function (event, variation, purchasable) {
+			event.preventDefault();
+			const $stockVariation = $('#stock_variation');
+			console.log('onShowVariation: %o ', {purchasable});
+			if (purchasable) {
+				$stockVariation.css({
+					display: 'none';
+				});
+			}
+			else {
+				$stockVariation.css({
+					display: 'block';
+				});
+			}
+		};
+
+		$.fn.wc_variation_form = function () {
+			wc_variation_form.apply(this);
+			// console.log('wc_variation_form: %o', this.$form)
+			this.on('show_variation', onShowVariation);
+			return this;
+		};
+	})(jQuery);
+
 </script>
 
 <?php
