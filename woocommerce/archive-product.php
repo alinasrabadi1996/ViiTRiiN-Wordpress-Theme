@@ -223,7 +223,7 @@
 			}
 			else {
 				$stockVariation.css({
-					display: 'block',
+					display: '',
 				});
 			}
 		};
