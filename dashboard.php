@@ -1,5 +1,10 @@
-<?php /* Template Name: Dashboard */ ?>
-<?php if( !isset($_SESSION) ) session_start(); ?>
+<?php /* Template Name: Dashboard */ 
+
+if( !isset($_SESSION) ) {
+    session_start();
+}
+?>
+
 <?php get_header(); ?>
 
 <?php
@@ -11,9 +16,6 @@
     <div class="container-fluid section-inner">
         <div id="page-dashboard">
             <?php
-            
-            
-            
             if( isset($_SESSION['verfied_mobile']) ) { 
                 
                 // 09xxx OR 9xxx
@@ -76,9 +78,8 @@
                     wp_set_auth_cookie($user_id, true, true );
                     /* END GET USER */
                 }
-                
-
                 ?>
+                
                 <div id="dashboard-sidebar" class="col-md-3">
                     <div class="container-inner">
                         <?php include_once('dashboard/sidebar.php'); ?>
@@ -151,7 +152,7 @@
         var code = "Null";
         code = jQuery("#verify-code").val();
         var verification_sts = jQuery("#verification_sts").val();
-        jQuery.post("<?php echo site_url(); ?>/includes/mobile-verify.php", {mobile_entry: mobile, verify_code: code, sts: verification_sts }, function(result) {
+        jQuery.post("<?php echo template_url(); ?>/includes/mobile-verify.php", {mobile_entry: mobile, verify_code: code, sts: verification_sts }, function(result) {
             if(result == "sent") {
                 jQuery("#mobile-form").hide();
                 jQuery("#verification-form").show();
