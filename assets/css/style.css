@@ -8893,6 +8893,25 @@ PAGE : SUBSCRIBE
 }
 
 /*
+ADDITONAL
+*/
+.wcard .coupon-description {
+    position: absolute;
+    background: #55a741;
+    display: block;
+    padding: 11px;
+    width: 100%;
+    color: #FFF;
+    font-weight: bold;
+    border-radius: 3px;
+    box-shadow: 0 4px 6px -1px rgba(70, 76, 69, 0.4);
+}
+
+#collapse-table {
+    overflow: hidden;
+}
+
+/*
 MEDIA QUERIES
 */
 @media only screen and (max-width:1156px) {
@@ -9051,6 +9070,23 @@ MEDIA QUERIES
 
   .config-product-header-fix {
     position: static;
+  }
+  
+  .wcard .coupon-description {
+      position: static;
+  }
+  
+  .wcard .coupon input {
+      width: 100% !important;
+      float: right;
+  }
+  
+  .wcard #coupon_code {
+    background: #f1f1f1;
+    border: 1px solid #dddce4;
+    margin-bottom: 10px;
+    padding: 9px;
+    width: 100% !important;
   }
 }
 
