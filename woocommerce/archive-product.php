@@ -200,8 +200,10 @@
 </script>
 
 <script>
-	(function ($) {
+	jQuery(function () {
 		'use strict';
+
+		const $ = window.jQuery;
   
 		const wc_variation_form = $.fn.wc_variation_form;
 
@@ -232,7 +234,7 @@
 			this.on('show_variation', onShowVariation);
 			return this;
 		};
-	})(jQuery);
+	});
 
 </script>
 
