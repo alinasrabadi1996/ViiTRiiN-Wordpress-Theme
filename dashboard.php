@@ -152,7 +152,7 @@ if( !isset($_SESSION) ) {
         var code = "Null";
         code = jQuery("#verify-code").val();
         var verification_sts = jQuery("#verification_sts").val();
-        jQuery.post("<?php echo template_url(); ?>/includes/mobile-verify.php", {mobile_entry: mobile, verify_code: code, sts: verification_sts }, function(result) {
+        jQuery.post("<?php echo get_template_uri(); ?>/includes/mobile-verify.php", {mobile_entry: mobile, verify_code: code, sts: verification_sts }, function(result) {
             if(result == "sent") {
                 jQuery("#mobile-form").hide();
                 jQuery("#verification-form").show();
