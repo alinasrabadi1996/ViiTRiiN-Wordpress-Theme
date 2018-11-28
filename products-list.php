@@ -1,5 +1,8 @@
-<?php /* Template Name: Products-List */ ?>
-<?php get_header(); ?>
+<?php /* Template Name: Products-List */
+
+get_header();
+
+?>
 
 <script>    
     var w = window.innerWidth

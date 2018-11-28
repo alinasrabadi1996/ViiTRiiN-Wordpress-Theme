@@ -1,17 +1,20 @@
-<?php /* Template Name: Complaints */ ?>
-<?php
+<?php /* Template Name: Complaints */
+
+if( !isset($_SESSION) ) {
     session_start();
-    $_session['message'] = null;
-    $captcha_instance = new ReallySimpleCaptcha();
-    //$captcha_instance->bg = array( 0, 0, 0 );
-    $word = $captcha_instance->generate_random_word();
-    
-    // Generate an image file and a corresponding text file in the temporary directory.
-    $prefix = mt_rand();
-    $captcha_image_name = $captcha_instance->generate_image( $prefix, $word );
-    
-    // Create the image file path:
-    $captcha_image_file_path = plugins_url().'/really-simple-captcha/tmp/'.$captcha_image_name;
+}
+
+$_session['message'] = null;
+$captcha_instance = new ReallySimpleCaptcha();
+//$captcha_instance->bg = array( 0, 0, 0 );
+$word = $captcha_instance->generate_random_word();
+
+// Generate an image file and a corresponding text file in the temporary directory.
+$prefix = mt_rand();
+$captcha_image_name = $captcha_instance->generate_image( $prefix, $word );
+
+// Create the image file path:
+$captcha_image_file_path = plugins_url().'/really-simple-captcha/tmp/'.$captcha_image_name;
 
 
 if(isset($_POST['complaints-form'])) :
@@ -44,8 +47,11 @@ if(isset($_POST['complaints-form'])) :
         $_session['message'] = '<div class="form-alert danger">کد با تصویر مطابقت ندارد.</div>';
     }
 endif;
+
+get_header();
+
 ?>
-<?php get_header(); ?>
+
 <section id="content-wrap" class="section page-content section--page page--contact">
     <div class="container section-inner">
         <div class="section-title page-title-3">

@@ -1,8 +1,13 @@
-<?php /* Template Name: HomePage */ ?>
-<?php session_start(); ?>
-<?php get_header(); ?>
+<?php /* Template Name: HomePage */
+if( !isset($_SESSION) ) {
+    session_start();
+}
 
-<?php get_template_part('template-parts/content', 'slider-1'); ?>
+get_header();
+
+get_template_part('template-parts/content', 'slider-1');
+
+?>
 
 <section class="products products-carousel">
     <div class="products-list owl-carousel owl-theme">

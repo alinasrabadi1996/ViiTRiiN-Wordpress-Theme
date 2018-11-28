@@ -3,13 +3,11 @@
 if( !isset($_SESSION) ) {
     session_start();
 }
-?>
 
-<?php get_header(); ?>
+get_header();
 
-<?php
-    $pagename = get_query_var('pgname');
-    $pages = array('profile', 'orders', 'creadits', 'logout', 'methods');
+$pagename = get_query_var('pgname');
+$pages = array('profile', 'orders', 'creadits', 'logout', 'methods');
 ?>
 
 <section id="content-wrap" class="section page-content">

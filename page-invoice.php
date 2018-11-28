@@ -1,5 +1,9 @@
 <?php
-session_start();
+
+if( !isset($_SESSION) ) {
+    session_start();
+}
+
 /* USER ID */
 wp_set_current_user($_SESSION['global_current_user_id']); 
 wp_set_auth_cookie($_SESSION['global_current_user_id'], true, true );

@@ -1,5 +1,8 @@
-<?php /* Template Name: Page Template */ ?>
-<?php get_header(); ?>
+<?php /* Template Name: Page Template */
+
+get_header();
+
+?>
 
 <section id="content-wrap" class="section page-content">
     <div class="container section-inner">
