@@ -62,7 +62,7 @@
 			$image = site_url()."/wp-content/uploads/2018/03/categories-header.jpg";
 		}
 	?>
-	<div style="background-image: url(<?php echo $image; ?>)" class="categories-header-slider <?php if($term_children) { echo "has-fixbar"; } ?>"></div>
+	<div style="background-image: url(<?php echo $image; ?>)" class="asdasd categories-header-slider <?php if($term_children) { echo "has-fixbar"; } ?>"></div>
 
 	<?php
 
