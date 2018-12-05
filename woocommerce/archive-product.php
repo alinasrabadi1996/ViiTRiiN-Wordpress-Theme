@@ -55,11 +55,7 @@
 	<?php
 		$term = get_queried_object();
 		$intro_image = get_field('intro_image', $term);
-
-		print_r($intro_image);
-		exit;
-
-		if(!empty($intro_image['url']) ) {
+		if(is_array($intro_image) && !empty($intro_image['url']) ) {
 			$image = $intro_image['url'];
 		}
 		else {
