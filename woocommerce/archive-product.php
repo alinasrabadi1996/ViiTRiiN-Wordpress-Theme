@@ -54,22 +54,11 @@
 
 	<?php
 		$term = get_queried_object();
-		$intro_image = get_field('intro_image', $term);
-		if(is_array($intro_image) && in_array('url', $intro_image) && !empty($intro_image['url']) ) {
-			$image = $intro_image['url'];
-		}
-		else {
-			$image = site_url()."/wp-content/uploads/2018/03/categories-header.jpg";
-		}
+		$image = site_url()."/wp-content/uploads/2018/03/categories-header.jpg";
+		if( get_field('intro_image', $term) && !empty(get_field('intro_image', $term)) )
+			$image = get_field('intro_image', $term)['url'];
 	?>
-	<div style="background-image: url(<?php echo $image; ?>)" class="categories-header-slider <?php if($term_children) { echo "has-fixbar"; } ?>">
-		<!--
-		<div class="move-to-content-arrow" onclick="goto_products('.categories-products-section',58)">
-			<span class="slider-move-to-title">محصولات</span>
-			<i class="icon-keyboard_arrow_down"></i>
-		</div>
-		-->
-	</div>
+	<div style="background-image: url(<?php echo $image; ?>)" class="categories-header-slider <?php if($term_children) { echo "has-fixbar"; } ?>"></div>
 
 	<?php
 
@@ -220,11 +209,13 @@
 				$stockVariation.css({
 					display: 'none',
 				});
+				$('.configure-summary-container .button').removeClass('deactive');
 			}
 			else {
 				$stockVariation.css({
 					display: '',
 				});
+				$('.configure-summary-container .button').addClass('deactive');
 			}
 		};
 
