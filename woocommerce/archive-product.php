@@ -26,12 +26,6 @@
 	$parent = get_queried_object()->term_id;
 	$taxonomy_name = 'product_cat';
 	$term_children = get_term_children( $parent, $taxonomy_name );
-	/*
-	$categories = get_terms(array(
-		'taxonomy' => 'product_cat',
-		'hide_empty' => false	
-	));
-	*/
 	?>
 
 	<div class="categories-menu <?php if($term_children) { echo "has-fixbar"; } ?>">
@@ -63,14 +57,7 @@
 			$image = site_url()."/wp-content/uploads/2018/03/categories-header.jpg";
 		}
 	?>
-	<div style="background-image: url(<?php echo $image; ?>)" class="categories-header-slider <?php if($term_children) { echo "has-fixbar"; } ?>">
-		<!--
-		<div class="move-to-content-arrow" onclick="goto_products('.categories-products-section',58)">
-			<span class="slider-move-to-title">محصولات</span>
-			<i class="icon-keyboard_arrow_down"></i>
-		</div>
-		-->
-	</div>
+	<div style="background-image: url(<?php echo $image; ?>)" class="categories-header-slider <?php if($term_children) { echo "has-fixbar"; } ?>"></div>
 
 	<?php
 
