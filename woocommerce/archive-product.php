@@ -56,10 +56,8 @@
 		$term = get_queried_object();
 		$intro_image = get_field('intro_image', $term);
 
-		echo '<div style="display: none">'.$intro_image.'</div>'; 
-
-		if(is_array($intro_image) && in_array('url', $intro_image) && !empty($intro_image['url']) ) {
-			$image = $intro_image['url'];
+		if(!empty($intro_image) ) {
+			$image = get_attachment_link($intro_image);
 		}
 		else {
 			$image = site_url()."/wp-content/uploads/2018/03/categories-header.jpg";
