@@ -57,7 +57,7 @@
 		$intro_image = get_field('intro_image', $term);
 
 		if(!empty($intro_image) ) {
-			$image = get_attachment_link($intro_image);
+			$image = wp_get_attachment_image_src($intro_image);
 		}
 		else {
 			$image = site_url()."/wp-content/uploads/2018/03/categories-header.jpg";
