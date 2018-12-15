@@ -7298,9 +7298,11 @@ PRODUCTS LIST
 }
 
 .products-list .product-btn.loading:after {
-    top: 10px !important;
-    content: "\e907" !important;
+    top: 6px !important;
+    content: "\e419" !important;
     font-family: "pazh-pack" !important;
+    font-size: 20px;
+    left: 10px !important;
 }
 
 .woocommerce .woocommerce-products-header__title {
