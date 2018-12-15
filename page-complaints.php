@@ -1,8 +1,11 @@
 <?php /* Template Name: Complaints */
-
 if( !isset($_SESSION) ) {
     session_start();
 }
+
+/* CEOPanel DB Info */
+require_once( $_SERVER['DOCUMENT_ROOT'] . '/wp-config.php' );
+define('DBNAME','ceopanel');
 
 $_session['message'] = null;
 $captcha_instance = new ReallySimpleCaptcha();
@@ -27,11 +30,8 @@ if(isset($_POST['complaints-form'])) :
     $date = date('Y-m-d H:i:s');
     
     if($captcha_instance->check( $captcha_prefix, $captcha_answer)) {
-        $hostname='localhost';
-        $username='viitriin_ceouser';
-        $password='Aht5vPq9s34E';
         try {
-            $dbh = new PDO("mysql:host=$hostname;dbname=viitriin_ceopanel;charset=utf8",$username,$password, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
+            $dbh = new PDO("mysql:host=DB_HOST;dbname=DBNAME;charset=utf8",DB_USER,DB_PASSWORD, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
             $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $sql = "INSERT INTO complaints (content, name, phone, email, date)
             VALUES ('".$content."', '".$name."', '".$phone."', '".$email."', '".$date."')";
