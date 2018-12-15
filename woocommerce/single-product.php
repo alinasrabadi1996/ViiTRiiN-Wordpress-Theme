@@ -47,6 +47,44 @@ get_header( 'shop' ); ?>
 		do_action( 'woocommerce_sidebar' );
 	?>
 
+
+<script>
+	jQuery(function () {
+		'use strict';
+		const $ = window.jQuery;
+
+		const wc_variation_form = $.fn.wc_variation_form;
+
+		if (!wc_variation_form) {
+			return;
+		}
+
+		const onShowVariation = function (event, variation, purchasable) {
+			event.preventDefault();
+			const $stockVariation = $('#stock_variation');
+			console.log('onShowVariation: %o ', {purchasable});
+			if (purchasable) {
+				$stockVariation.css({
+					display: 'none',
+				});
+				$('.configure-summary-container .button').removeClass('deactive');
+			}
+			else {
+				$stockVariation.css({
+					display: '',
+				});
+				$('.configure-summary-container .button').addClass('deactive');
+			}
+		};
+
+		$.fn.wc_variation_form = function () {
+			wc_variation_form.apply(this);
+			this.on('show_variation', onShowVariation);
+			return this;
+		};
+	});
+</script>
+
 <?php get_footer( 'shop' );
 
 /* Omit closing PHP tag at the end of PHP files to avoid "headers already sent" issues. */
