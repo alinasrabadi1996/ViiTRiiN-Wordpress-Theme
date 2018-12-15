@@ -7,6 +7,10 @@ if( !isset($_SESSION) ) {
 require_once( $_SERVER['DOCUMENT_ROOT'] . '/wp-config.php' );
 define('DBNAME','ceopanel');
 
+
+wp_die($_SERVER['DOCUMENT_ROOT'] . DB_USER, 'خطا'); 
+
+
 $_session['message'] = null;
 $captcha_instance = new ReallySimpleCaptcha();
 //$captcha_instance->bg = array( 0, 0, 0 );
