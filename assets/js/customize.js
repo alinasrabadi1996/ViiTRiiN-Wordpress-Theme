@@ -780,7 +780,7 @@ jQuery("#notifire-form").validate({
         }
 
         request = jQuery.ajax({
-            url: 'https://viitriin.com/store/stock-notifier.php',
+            url: '/store/wp-content/themes/main/includes/stock-notifier.php',
             type: 'POST',
             data: {"notifier_phone": notifier_phone, "notifier_name": notifier_name, "prod_id": prod_id, "var_id": var_id},
             cache: false,
