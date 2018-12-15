@@ -31,7 +31,7 @@ if(isset($_POST['complaints-form'])) :
     
     if($captcha_instance->check( $captcha_prefix, $captcha_answer)) {
         try {
-            $dbh = new PDO("mysql:host=DB_HOST;dbname=DBNAME;charset=utf8",DB_USER,DB_PASSWORD, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
+            $dbh = new PDO("mysql:host=".DB_HOST.";dbname=".DBNAME.";charset=utf8",DB_USER,DB_PASSWORD, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
             $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $sql = "INSERT INTO complaints (content, name, phone, email, date)
             VALUES ('".$content."', '".$name."', '".$phone."', '".$email."', '".$date."')";
