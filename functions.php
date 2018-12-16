@@ -1,6 +1,8 @@
 <?php
 include_once("includes/init_conf.php");
 include_once("includes/wc_conf.php");
+include_once('framework/api/sms/SendSMS_SoapClient.php');
+include_once('framework/api/mail/simpleMail.php');
 
 add_theme_support('title-tag');
 
