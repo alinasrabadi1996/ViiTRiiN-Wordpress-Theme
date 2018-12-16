@@ -4,8 +4,13 @@ if( !isset($_POST['subs_input']) || empty($_POST['subs_input']) ) {
     wp_die('دسترسی به این صفحه مقدور نیست.', 'خطا');
 }
 
+/* CEOPanel DB Info */
+require_once( $_SERVER['DOCUMENT_ROOT'] . '/wp-config.php' );
+define('DBNAME','ceopanel');
+
 include_once('framework/api/sms/SendSMS_SoapClient.php');
 include_once('framework/api/mail/simpleMail.php');
+
 
 $subs_type = "phone";
 $subs_input = $_POST['subs_input'];
@@ -16,7 +21,7 @@ $hostname='localhost';
 $username='viitriin_ceouser';
 $password='Aht5vPq9s34E';
 try {
-    $dbh = new PDO("mysql:host=$hostname;dbname=viitriin_ceopanel;charset=utf8",$username,$password, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
+    $dbh = new PDO('mysql:host='.DB_HOST.';dbname='.DBNAME.';charset=utf8',DB_USER, DB_PASSWORD, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $sql = "INSERT INTO subscription (subs_val, subs_type, subs_date)
