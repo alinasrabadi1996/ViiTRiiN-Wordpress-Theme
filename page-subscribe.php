@@ -16,10 +16,8 @@ $subs_type = "phone";
 $subs_input = $_POST['subs_input'];
 if( strpos($subs_input, "@") == true )
     $subs_type = "email";
+
 $date = date('Y-m-d H:i:s');
-$hostname='localhost';
-$username='viitriin_ceouser';
-$password='Aht5vPq9s34E';
 try {
     $dbh = new PDO('mysql:host='.DB_HOST.';dbname='.DBNAME.';charset=utf8',DB_USER, DB_PASSWORD, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
