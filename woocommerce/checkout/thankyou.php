@@ -89,11 +89,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 			/*
 			SEND SMS After Ordering
 			*/
-			$sms_text = "فروشگاه اینترنتی ویترین.\r
-مشتری گرامی خرید شما با کد سفارش ".$order->get_order_number()." با موفقیت ثبت شد. \r
-https://viitriin.com
-";
-			SendSMS($sms_text, $billing_phone);
+// 			$sms_text = "فروشگاه اینترنتی ویترین.\r
+// مشتری گرامی خرید شما با کد سفارش ".$order->get_order_number()." با موفقیت ثبت شد. \r
+// https://viitriin.com
+// ";
+// 			SendSMS($sms_text, $billing_phone);
 			
 			
 			?>
