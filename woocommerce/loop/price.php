@@ -11,11 +11,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-global $product, $product;
+global $product;
 ?>
 
 
 <?php
+/*
 if ($product->is_type( 'simple' )) { ?>
 	<span class="price"><?php echo wc_price($product->get_regular_price()); ?></span>
 <?php } elseif($product->product_type=='variable') {
@@ -26,4 +27,8 @@ if ($product->is_type( 'simple' )) { ?>
 	$regular_price = $variable_product1->regular_price;
 	?>
 	<span class="price"><?php echo wc_price($regular_price); ?></span>
-<?php } ?>
+<?php } */?>
+
+<?php if ( $price_html = $product->get_price_html() ) : ?>
+	<span class="price"><?php echo $price_html; ?></span>
+<?php endif; ?>
