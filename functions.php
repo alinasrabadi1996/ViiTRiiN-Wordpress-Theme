@@ -117,11 +117,13 @@ remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_pr
 SEND SMS After Ordering
 */
 add_action('woocommerce_order_status_changed', 'send_sms_after_ordering', 10, 4 );
-function send_sms_after_ordering( $order_id, $old_status, $new_status, $order ){
-    $sms_text = "فروشگاه اینترنتی ویترین.\r
-مشتری گرامی خرید شما با کد سفارش ".$order->get_order_number()." با موفقیت ثبت شد. \r
-https://viitriin.com
-";
+function send_sms_after_ordering( $order_id, $old_status, $new_status, $order ) {
     $order = new WC_Order($order_id);
-    SendSMS($sms_text, $order->billing_phone);
+    if($old_status == "processing" || $old_status == "on-hold") {
+        $sms_text = "فروشگاه اینترنتی ویترین.\r
+        مشتری گرامی خرید شما با کد سفارش ".$order->get_order_number()." با موفقیت ثبت شد. \r
+        https://viitriin.com
+        ";
+        SendSMS($sms_text, $order->billing_phone);        
+    }
 }
