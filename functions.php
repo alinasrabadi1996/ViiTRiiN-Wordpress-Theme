@@ -111,3 +111,17 @@ add_action( 'init', 'viitriin_custom_post_status' );
 
 remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10 );
 remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
+
+
+/*
+SEND SMS After Ordering
+*/
+add_action('woocommerce_order_status_changed', 'send_sms_after_ordering', 10, 4 );
+function send_sms_after_ordering( $order_id, $old_status, $new_status, $order ){
+    $sms_text = "فروشگاه اینترنتی ویترین.\r
+مشتری گرامی خرید شما با کد سفارش ".$order->get_order_number()." با موفقیت ثبت شد. \r
+https://viitriin.com
+";
+    $order = new WC_Order($order_id);
+    SendSMS($sms_text, $order->billing_phone);
+}
