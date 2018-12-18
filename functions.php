@@ -138,7 +138,7 @@ function check_product_in_cart() {
     foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
         // 278 = Rimmel Pank Doucce
         if ($cart_item['product_id'] == 278) {
-            echo '<p class="coupon-description">با خرید هر ریمل پانک، یک هدیه برای شما ارسال خواهد شد.</p>';
+            echo '<p class="coupon-description" style="background: #d61b1b;">با خرید هر ریمل پانک، یک هدیه برای شما ارسال خواهد شد.</p>';
         }
     }
 }
