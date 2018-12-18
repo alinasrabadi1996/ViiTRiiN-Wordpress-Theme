@@ -237,7 +237,7 @@ function customise_checkout_field($checkout)
 		'class' => array(
 			'my-field-class form-row-wide'
 		) ,
-		'label' => __('شماره موبایل معرف (اختیاری)') ,
+		'label' => __('شماره موبایل معرف') ,
 		'placeholder' => __('') ,
 		'required' => false,
 	) , $checkout->get_value('representer_phone'));
