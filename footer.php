@@ -111,8 +111,10 @@
                 jQuery('#page-checkout #billing_city').on('change', function (e) {
                     if(jQuery(this).val() === "تهران") {
                         jQuery("#page-checkout .wc_payment_method.payment_method_cod").show(300);
+                        jQuery("#payment_notice").show(300);
                     } else {
                         jQuery("#page-checkout .wc_payment_method.payment_method_cod").hide(300);
+                        jQuery("#payment_notice").hide(300);
                     }
                     
                 });
