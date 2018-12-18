@@ -120,7 +120,9 @@ add_action('woocommerce_order_status_changed', 'send_sms_after_ordering', 10, 4 
 function send_sms_after_ordering( $order_id, $old_status, $new_status, $order ) {
     $order = new WC_Order($order_id);
     if($new_status == "processing" || $new_status == "on-hold") {
-        $sms_text = "فروشگاه اینترنتی ویترین.\rمشتری گرامی خرید شما با کد سفارش ".$order->get_order_number()." با موفقیت ثبت شد. \rhttps://viitriin.com";
+        $sms_text = "فروشگاه اینترنتی ویترین.\r
+مشتری گرامی خرید شما با کد سفارش ".$order->get_order_number()." با موفقیت ثبت شد. \r
+https://viitriin.com";
         SendSMS($sms_text, $order->billing_phone);        
     }
 }
