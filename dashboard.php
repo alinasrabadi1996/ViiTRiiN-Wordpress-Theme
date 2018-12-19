@@ -161,6 +161,8 @@ $pages = array('profile', 'orders', 'creadits', 'logout', 'methods');
                 location.reload();
             } else if(result == "invalid") {
                 jQuery("#response").html("<span class='failed'>کد فعال سازی صحیح نمی باشد.<span>");
+            } else if(result == "API_Err") {
+                jQuery("#response").html("<span class='failed'>خطا در ارسال پیامک! لطفا دوباره تلاش کنید<span>");
             } else {
                 jQuery("#response").html("<span class='failed'>سیستم با خطا مواجه شد! لطفا دوباره تلاش کنید.<span>");
             }

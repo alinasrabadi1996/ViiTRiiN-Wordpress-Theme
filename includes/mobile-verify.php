@@ -13,9 +13,13 @@ if( isset($_POST['sts']) ) :
             $_SESSION['verfied_code'] = rand(1000, 9999);
             $assigned_code = $_SESSION['verfied_code'];
             $sms_text = "کد فعال سازی شما در ویترین: $assigned_code";
-            if(SendSMS($sms_text, $_SESSION['mobile_entry'])) {
+            $send_sms = SendSMS($sms_text, $_SESSION['mobile_entry']);
+            if($send_sms == 1) {
                 echo "sent";
                 exit; 
+            } elseif($send_sms == -1) {
+                echo "API_Err";
+                exit;
             } else {
                 echo "Err";
                 exit;
