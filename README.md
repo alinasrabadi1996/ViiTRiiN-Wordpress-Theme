@@ -1,3 +1,1 @@
 # ViiTRiiN-Wordpress-Theme
-
-Test
