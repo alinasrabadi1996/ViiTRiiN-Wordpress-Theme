@@ -16,7 +16,6 @@
 			else 
 				return 0;
 		} catch (SoapFault $e){
-			error_log($client);
 			return -1;
 		}
 	}
