@@ -49,13 +49,13 @@ get_template_part('template-parts/content', 'slider-1');
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 clear-boxing">
             <div class="product-presentation">
-                <a href="<?php echo site_url(); ?>/introduction/callas-two-way-cack/"><img src="<?php echo get_template_uri(); ?>/images/misc/vitrin-callas-two-way-cake-1.jpg" class="product-presentation-image"></a>
+                <a href="<?php echo site_url(); ?>/introduction/callas-two-way-cack/"><img src="<?php echo get_template_uri(); ?>/images/misc/doucce-matte-temptation-lipstick-cover.jpg" class="product-presentation-image"></a>
             </div>
             <div class="product-presentation">
-                <a href="<?php echo site_url(); ?>/introduction/amitice-lipstick-pencil/"><img src="<?php echo get_template_uri(); ?>/images/misc/vitrin-amitice-lipstick-pencil-1.jpg" class="product-presentation-image"></a>
+                <a href="<?php echo site_url(); ?>/introduction/amitice-lipstick-pencil/"><img src="<?php echo get_template_uri(); ?>/images/misc/amitice-mineral-tow-way-cack-cover.jpg" class="product-presentation-image"></a>
             </div>       
             <div class="product-presentation">
-                <a href="<?php echo site_url(); ?>/introduction/maybelline-mascara-volum-express-colossal/"><img src="<?php echo get_template_uri(); ?>/images/misc/vitrin-maybelline-mascara.jpg" class="product-presentation-image"></a>
+                <a href="<?php echo site_url(); ?>/introduction/maybelline-mascara-volum-express-colossal/"><img src="<?php echo get_template_uri(); ?>/images/misc/beyu-mascara-volume-now-cover.jpg" class="product-presentation-image"></a>
             </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 clear-boxing">
@@ -63,7 +63,7 @@ get_template_part('template-parts/content', 'slider-1');
                 <a href="<?php echo site_url(); ?>/introduction/doucce-punk-mascara/"><img src="<?php echo get_template_uri(); ?>/images/misc/vitrin-doucce-punk-mascara-1.jpg" class="product-presentation-image"></a>
             </div>
             <div class="product-presentation">
-                <a href="<?php echo site_url(); ?>/introduction/chapter-body-butter/"><img src="<?php echo get_template_uri(); ?>/images/misc/vitrin-chapter-body-butter-1.jpg" class="product-presentation-image"></a>
+                <a href="<?php echo site_url(); ?>/introduction/chapter-body-butter/"><img src="<?php echo get_template_uri(); ?>/images/misc/chapter-body-lotion-cover.jpg" class="product-presentation-image"></a>
             </div>
             <div class="product-presentation">
                 <a href="<?php echo site_url(); ?>/introduction/comeon-hand-face-cream-normal/"><img src="<?php echo get_template_uri(); ?>/images/misc/vitrin-comeon-hand-face-cream-normal-1.jpg" class="product-presentation-image"></a>
