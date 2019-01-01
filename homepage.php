@@ -48,26 +48,44 @@ get_template_part('template-parts/content', 'slider-1');
             <p>ویترین؛ ببین، خرید کن، بهترین باش...</p>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 clear-boxing">
-            <div class="product-presentation">
-                <a href="<?php echo site_url(); ?>/introduction/callas-two-way-cack/"><img src="<?php echo get_template_uri(); ?>/images/misc/doucce-matte-temptation-lipstick-cover.jpg" class="product-presentation-image"></a>
-            </div>
-            <div class="product-presentation">
-                <a href="<?php echo site_url(); ?>/introduction/amitice-lipstick-pencil/"><img src="<?php echo get_template_uri(); ?>/images/misc/amitice-mineral-tow-way-cack-cover.jpg" class="product-presentation-image"></a>
-            </div>       
-            <div class="product-presentation">
-                <a href="<?php echo site_url(); ?>/introduction/maybelline-mascara-volum-express-colossal/"><img src="<?php echo get_template_uri(); ?>/images/misc/beyu-mascara-volume-now-cover.jpg" class="product-presentation-image"></a>
-            </div>
+            <?php
+            $args = array(
+                'post_type' => 'homepage_banner',
+                'posts_per_page' => -1, 
+                'post_status' => 'publish',
+                'meta_key'		=> 'banner_position',
+                'meta_value'	=> 'right'
+            );
+            $loop = new WP_Query($args);
+            if ( $loop->have_posts() ) :
+                while ( $loop->have_posts() ) : $loop->the_post();
+                ?>
+                <div class="product-presentation">
+                    <a href="<?php if($banner_link = get_field('banner_permalink')) echo $banner_link; ?>"><img src="<?php the_post_thumbnail('full'); ?>" class="product-presentation-image"></a>
+                </div>
+                <?php
+                endwhile;
+            endif; ?>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 clear-boxing">
-            <div class="product-presentation">
-                <a href="<?php echo site_url(); ?>/introduction/doucce-punk-mascara/"><img src="<?php echo get_template_uri(); ?>/images/misc/vitrin-doucce-punk-mascara-1.jpg" class="product-presentation-image"></a>
-            </div>
-            <div class="product-presentation">
-                <a href="<?php echo site_url(); ?>/introduction/chapter-body-butter/"><img src="<?php echo get_template_uri(); ?>/images/misc/chapter-body-lotion-cover.jpg" class="product-presentation-image"></a>
-            </div>
-            <div class="product-presentation">
-                <a href="<?php echo site_url(); ?>/introduction/comeon-hand-face-cream-normal/"><img src="<?php echo get_template_uri(); ?>/images/misc/vitrin-comeon-hand-face-cream-normal-1.jpg" class="product-presentation-image"></a>
-            </div>
+        <?php
+            $args = array(
+                'post_type' => 'homepage_banner',
+                'posts_per_page' => -1, 
+                'post_status' => 'publish',
+                'meta_key'		=> 'banner_position',
+                'meta_value'	=> 'left'
+            );
+            $loop = new WP_Query($args);
+            if ( $loop->have_posts() ) :
+                while ( $loop->have_posts() ) : $loop->the_post();
+                ?>
+                <div class="product-presentation">
+                    <a href="<?php if($banner_link = get_field('banner_permalink')) echo $banner_link; ?>"><img src="<?php the_post_thumbnail('full'); ?>" class="product-presentation-image"></a>
+                </div>
+                <?php
+                endwhile;
+            endif; ?>
         </div>
     </div>
 </div>
