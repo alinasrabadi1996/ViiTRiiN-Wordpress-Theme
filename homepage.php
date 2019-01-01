@@ -81,7 +81,7 @@ get_template_part('template-parts/content', 'slider-1');
                 while ( $loop->have_posts() ) : $loop->the_post();
                 ?>
                 <div class="product-presentation">
-                    <a href="<?php if($banner_link = get_field('banner_permalink')) echo $banner_link; ?>"><img src="<?php the_post_thumbnail('full'); ?>" class="product-presentation-image"></a>
+                    <a href="<?php if($banner_link = get_field('banner_permalink')) echo $banner_link; ?>"><img src="<?php echo get_the_post_thumbnail_url('', 'full'); ?>" class="product-presentation-image"></a>
                 </div>
                 <?php
                 endwhile;
