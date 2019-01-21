@@ -1,8 +1,4 @@
 <?php /* Template Name: Dashboard */ 
-if( !isset($_SESSION) ) {
-    session_start();
-}
-
 get_header();
 
 $pagename = get_query_var('pgname');

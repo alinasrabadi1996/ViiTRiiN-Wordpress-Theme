@@ -1,4 +1,8 @@
 <?php
+if( !isset($_SESSION) ) {
+    session_start();
+}
+
 include_once(__DIR__.'/../framework/api/sms/SendSMS_SoapClient.php');
 
 if( isset($_POST['sts']) ) :
