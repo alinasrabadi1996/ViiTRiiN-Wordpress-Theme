@@ -1,42 +1,42 @@
 jQuery(document).ready(function() {
-    jQuery(".cart-btn").click(function() {
-        jQuery("#shopping-cart").toggleClass('active-dropdown');
-    });
+    // jQuery(".cart-btn").click(function() {
+    //     jQuery("#shopping-cart").toggleClass('active-dropdown');
+    // });
 
-    jQuery("body").click(function(e) {
-        e.stopPropagation();
+    // jQuery("body").click(function(e) {
+    //     e.stopPropagation();
 
-        if(jQuery(e.target).hasClass("count") || jQuery(e.target).hasClass("navbar-shop-icon") || jQuery(e.target).hasClass("menu-minicart")) {
+    //     if(jQuery(e.target).hasClass("count") || jQuery(e.target).hasClass("navbar-shop-icon") || jQuery(e.target).hasClass("menu-minicart")) {
             
-        } else {
-            jQuery("#shopping-cart").removeClass('active-dropdown');
-        }
+    //     } else {
+    //         jQuery("#shopping-cart").removeClass('active-dropdown');
+    //     }
 
-    });
+    // });
 
-    setInterval(function(){
-        ag = jQuery(window).width();
-        ak = jQuery(window).height();
-        am = jQuery(".menu-minicart-outer");
-        ad = am[0].getBoundingClientRect();
+    // setInterval(function(){
+    //     ag = jQuery(window).width();
+    //     ak = jQuery(window).height();
+    //     am = jQuery(".menu-minicart-outer");
+    //     ad = am[0].getBoundingClientRect();
 
-        var se = jQuery(".menu-minicart").height();
+    //     var se = jQuery(".menu-minicart").height();
 
-        if (ad.bottom > ak) {
-            var ae = ad.height - (ad.bottom - ak) - 5;
-            am.css({
-                overflowY: "scroll",
-                height: ae
-            });
-        }
+    //     if (ad.bottom > ak) {
+    //         var ae = ad.height - (ad.bottom - ak) - 5;
+    //         am.css({
+    //             overflowY: "scroll",
+    //             height: ae
+    //         });
+    //     }
 
-        if(se < ak) {
-            am.css({
-                overflowY: "visible",
-                height: se
-            })
-        }
-    }, 500);
+    //     if(se < ak) {
+    //         am.css({
+    //             overflowY: "visible",
+    //             height: se
+    //         })
+    //     }
+    // }, 500);
 
     /* NAVBAR COLLAPSE */
     jQuery('#navbar-collapse').on('click', function(e) {
