@@ -1,5 +1,4 @@
 <?php
-ob_start();
 get_template_part('framework/pazh', 'sidebar-menu'); ?>
 
 <div id="popup-chance-key" class="hide-element">

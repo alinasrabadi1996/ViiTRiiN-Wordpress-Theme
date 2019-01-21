@@ -1,10 +1,5 @@
 <?php
 ob_start();
-
-if( !isset($_SESSION) ) {
-    session_start();
-}
-
 session_destroy();
 wp_clear_auth_cookie();
 
