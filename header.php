@@ -8,7 +8,7 @@
 	<link rel="pingback" href="<?php echo bloginfo( 'pingback_url' ); ?>">
     <link rel="stylesheet" href="<?php echo get_template_uri(); ?>/css/init.css">
     <link href="<?php echo get_template_uri(); ?>/css/bootstrap.css" rel="stylesheet"/>
-    <link href="<?php echo get_template_uri(); ?>/css/style.css?v=1" rel="stylesheet"/>
+    <link href="<?php echo get_template_uri(); ?>/css/style.css?v=2" rel="stylesheet"/>
     <script src="<?php echo get_template_uri(); ?>/js/jquery.min.js"></script>
     <?php wp_head(); ?>
     <script>
