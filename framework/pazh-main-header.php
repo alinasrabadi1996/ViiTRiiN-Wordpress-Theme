@@ -64,6 +64,25 @@ get_template_part('framework/pazh', 'sidebar-menu'); ?>
     </div>
 </div>
 
+<div id="winter-festival">
+    <div class="snowflakes" aria-hidden="true">
+        <div class="festival-details">
+            <div class="title">جشنواره زمستانه ویترین</div>
+            <div class="deposit">تخفیف + ارسال رایگان</div>
+        </div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake"><img draggable="false" class="emoji" alt="❄" src="https://s.w.org/images/core/emoji/11/svg/2744.svg"></div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake"><img draggable="false" class="emoji" alt="❄" src="https://s.w.org/images/core/emoji/11/svg/2744.svg"></div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake"><img draggable="false" class="emoji" alt="❄" src="https://s.w.org/images/core/emoji/11/svg/2744.svg"></div>
+    </div>
+</div>
+
 <header id="main-header" class="container-fluid static">
     <div class="search">
         <?php echo do_shortcode('[wcas-search-form]'); ?>
