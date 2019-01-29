@@ -75,20 +75,18 @@
                 </div>
                 <div id="footer-bottom">
                     <div class="enamad">
-                        <img src="https://trustseal.enamad.ir/logo.aspx?id=89076&amp;p=5ONOykIjqCEUMJY7" alt="" onclick="window.open(&quot;https://trustseal.enamad.ir/Verify.aspx?id=89076&amp;p=5ONOykIjqCEUMJY7&quot;, &quot;Popup&quot;,&quot;toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=580, height=600, top=30&quot;)" style="cursor:pointer" id="5ONOykIjqCEUMJY7">			
+                        <img src="<?php echo get_template_uri(); ?>/images/misc/enamad-logo.png" alt="" onclick="window.open(&quot;https://trustseal.enamad.ir/Verify.aspx?id=89076&amp;p=5ONOykIjqCEUMJY7&quot;, &quot;Popup&quot;,&quot;toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=580, height=600, top=30&quot;)" style="cursor:pointer" id="5ONOykIjqCEUMJY7">			
                     </div>
-					
                     <div class="enamad" id="samandehi">
-						<img id='jxlzesgtesgtesgtapfuesgtjxlz' style='cursor:pointer; padding-bottom: 16px;' onclick='window.open("https://logo.samandehi.ir/Verify.aspx?id=1000501&p=rfthobpdobpdobpddshwobpdrfth", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630, top=30")' alt='logo-samandehi' src='https://logo.samandehi.ir/logo.aspx?id=1000501&p=nbpdlymalymalymaujynlymanbpd'/>
+						<img id='jxlzesgtesgtesgtapfuesgtjxlz' style='cursor:pointer; padding-bottom: 16px;' onclick='window.open("https://logo.samandehi.ir/Verify.aspx?id=1000501&p=rfthobpdobpdobpddshwobpdrfth", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630, top=30")' alt='logo-samandehi' src='<?php echo get_template_uri(); ?>/images/misc/samandehi-logo.png'/>
                     </div>
-							
                     <p class="copyright"><small class="_txt">کلیه حقوق این وب سایت برای فروشگاه اینترنتی ویترین محفوظ می باشد.</small></o>
                 </div>
             </div>
         </footer>
 
-        <script src="<?php echo get_template_uri(); ?>/js/init.js"></script>
-        <script src="<?php echo get_template_uri(); ?>/js/customize.js"></script>
+        <script src="<?php echo get_template_uri(); ?>/js/init.js?v=1"></script>
+        <script src="<?php echo get_template_uri(); ?>/js/customize.js?v=1"></script>
 
         <script type="text/javascript">
             paceOptions = {
