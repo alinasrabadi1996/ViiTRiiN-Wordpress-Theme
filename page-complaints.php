@@ -1,8 +1,4 @@
 <?php /* Template Name: Complaints */
-if( !isset($_SESSION) ) {
-    session_start();
-}
-
 /* CEOPanel DB Info */
 require_once( $_SERVER['DOCUMENT_ROOT'] . '/wp-config.php' );
 define('DBNAME','ceopanel');

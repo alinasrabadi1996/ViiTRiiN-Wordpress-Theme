@@ -1,8 +1,4 @@
 <?php /* Template Name: HomePage */
-if( !isset($_SESSION) ) {
-    session_start();
-}
-
 get_header();
 
 get_template_part('template-parts/content', 'slider-1');

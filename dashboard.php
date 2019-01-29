@@ -1,5 +1,4 @@
 <?php /* Template Name: Dashboard */ 
-
 if( !isset($_SESSION) ) {
     session_start();
 }
