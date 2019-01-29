@@ -132,6 +132,17 @@ jQuery(document).ready(function() {
     jQuery("#main-header .search .dgwt-wcas-search-submit .icon").click(function(e) {
         e.preventDefault();
     });
+
+    // Main Header Sticky If Topbar Exist
+    if(jQuery("#main-topbar").length) {
+        jQuery(window).scroll(function() {
+            if(jQuery(this).scrollTop() > 60) {
+                jQuery("body").addClass("homepage-header-sticky");
+            } else {
+                jQuery("body").removeClass("homepage-header-sticky");
+            }
+        });
+    }
 });
 
 
