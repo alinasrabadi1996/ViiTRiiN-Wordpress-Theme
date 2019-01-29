@@ -8,7 +8,7 @@
 	<link rel="pingback" href="<?php echo bloginfo( 'pingback_url' ); ?>">
     <link href="<?php echo get_template_uri(); ?>/css/init.css?v=1" rel="stylesheet" />
     <link href="<?php echo get_template_uri(); ?>/css/bootstrap.css" rel="stylesheet" />
-    <link href="<?php echo get_template_uri(); ?>/css/style.css?v=3" rel="stylesheet" />
+    <link href="<?php echo get_template_uri(); ?>/css/style.css?v=3.1" rel="stylesheet" />
     <?php wp_head(); ?>
     <script>
         var WRAjaxURL = '<?php echo esc_js( admin_url( 'admin-ajax.php' ) ); ?>';
