@@ -99,69 +99,40 @@
                     selectors: ['.my-page'] // Checks for event loop lag signaling that javascript is being executed
                 }
             };
+
             jQuery(".form-row").removeClass("address-field");
             jQuery(document).ready(function() {
-                /**
-                jQuery("#chancekey-link, .chancekey-link").click(function(e) {
-                    e.preventDefault();
-                    chance_key();
-                });
-                */
-                          
                 jQuery('#page-checkout #billing_city').on('change', function (e) {
                     if(jQuery(this).val() === "تهران") {
                         jQuery("#page-checkout .wc_payment_method.payment_method_cod").show(300);
+                        jQuery("#payment_notice").show(300);
                     } else {
                         jQuery("#page-checkout .wc_payment_method.payment_method_cod").hide(300);
+                        jQuery("#payment_notice").hide(300);
                     }
                     
                 });
-                
                 jQuery('#payment_method_bankmellat').prop("checked", true);
             });
 
-
-            jQuery("#billing_phone_field input").bind('keyup change click', function() {
-                if (!jQuery(this).val().match(/^\d*$/)) {
-                    alert("تلفن همراه را انگلیسی وارد نمائید.");
+            jQuery(document).on('keyup', '#billing_phone', function(){
+                String.prototype.toEnglishDigits = function () {
+                    var persian = { '۰': '0', '۱': '1', '۲': '2', '۳': '3', '۴': '4', '۵': '5', '۶': '6', '۷': '7', '۸': '8', '۹': '9' };
+                    var arabic = { '٠': '0', '١': '1', '٢': '2', '٣': '3', '٤': '4', '٥': '5', '٦': '6', '٧': '7', '٨': '8', '٩': '9' };
+                    return this.replace(/[^0-9.]/g, function (res) {
+                        return persian[res] || arabic[res] || res;
+                    });
+                };
+                var phone = jQuery(this).val();
+                if(phone.length > 0) {
+                    phone = phone.toEnglishDigits();
+                    if(phone.indexOf(0) != 0) {
+                        jQuery(this).val('0' + phone);
+                    } else {
+                        jQuery(this).val(phone);
+                    }
                 }
             });
-
-
-            function validate_national(meli_code) {
-                if (meli_code.length == 10) {
-                    if (meli_code == '1111111111' ||
-                        meli_code == '0000000000' ||
-                        meli_code == '2222222222' ||
-                        meli_code == '3333333333' ||
-                        meli_code == '4444444444' ||
-                        meli_code == '5555555555' ||
-                        meli_code == '6666666666' ||
-                        meli_code == '7777777777' ||
-                        meli_code == '8888888888' ||
-                        meli_code == '9999999999') {
-                        return false;
-                    }
-                    c = parseInt(meli_code.charAt(9));
-                    n = parseInt(meli_code.charAt(0)) * 10 +
-                        parseInt(meli_code.charAt(1)) * 9 +
-                        parseInt(meli_code.charAt(2)) * 8 +
-                        parseInt(meli_code.charAt(3)) * 7 +
-                        parseInt(meli_code.charAt(4)) * 6 +
-                        parseInt(meli_code.charAt(5)) * 5 +
-                        parseInt(meli_code.charAt(6)) * 4 +
-                        parseInt(meli_code.charAt(7)) * 3 +
-                        parseInt(meli_code.charAt(8)) * 2;
-                    r = n - parseInt(n / 11) * 11;
-                    if ((r == 0 && r == c) || (r == 1 && c == 1) || (r > 1 && c == 11 - r)) {
-                        return true;
-                    } else {
-                        return false;
-                    }
-                } else {
-                    return false;
-                }
-            }
         </script>
         <?php wp_footer(); ?>
     </body>
