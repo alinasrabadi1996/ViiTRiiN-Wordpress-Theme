@@ -1,5 +1,4 @@
 <?php
-ob_start();
 get_template_part('framework/pazh', 'sidebar-menu'); ?>
 
 <div id="popup-chance-key" class="hide-element">
@@ -89,18 +88,10 @@ get_template_part('framework/pazh', 'sidebar-menu'); ?>
         <div class="member-area">
             <ul class="item-list">
                 <li class="item">
-                    <div id="shopping-cart" class="navbar-icon menu-cart dropdown">
-                        <div class="cart-btn" href="<?php echo WC()->cart->get_cart_url(); ?>">
+                    <div class="navbar-icon menu-cart dropdown">
+                        <a class="cart-btn" href="<?php echo WC()->cart->get_cart_url(); ?>">
                             <i class="col-icon icon icon-nav-cart navbar-shop-icon"></i>
-                            <div class="count">
-                                <?php echo WC()->cart->get_cart_contents_count(); ?>
-                            </div>
-                        </div>
-                        <div class="menu-minicart-outer">
-                            <div class="menu-minicart">
-                                <div class="widget_shopping_cart_content"><?php woocommerce_mini_cart();?></div>
-                            </div>
-                        </div>
+                        </a>
                     </div>
                 </li>
                 <li class="item">                             
