@@ -99,7 +99,7 @@
                     selectors: ['.my-page'] // Checks for event loop lag signaling that javascript is being executed
                 }
             };
-            
+
             jQuery(".form-row").removeClass("address-field");
             jQuery(document).ready(function() {
                 jQuery('#page-checkout #billing_city').on('change', function (e) {
@@ -111,12 +111,6 @@
                     
                 });
                 jQuery('#payment_method_bankmellat').prop("checked", true);
-            });
-
-            jQuery("#billing_phone_field input").bind('keyup change click', function() {
-                if (!jQuery(this).val().match(/^\d*$/)) {
-                    alert("تلفن همراه را انگلیسی وارد نمائید.");
-                }
             });
 
             jQuery(document).on('keyup', '#billing_phone', function(){
