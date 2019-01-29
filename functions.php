@@ -142,3 +142,42 @@ https://viitriin.com";
 //         }
 //     }
 // }
+
+/*
+Hook - FIX DISCOUNT PRICE (Dynamic Price Discount Plugin)
+*/
+function hook_fix_discount_price($order_id) {
+    $order = wc_get_order($order_id);
+    $items = $order->get_items();
+    foreach ( $items as $item_id => $item ) {
+        $product_id = $item->get_product_id(); // Return ID Simple & Variable Product
+        $product = wc_get_product($product_id);
+        $item_subtotal = wc_get_order_item_meta($item_id, '_line_subtotal', true);
+
+        // # For Debuging:
+        // echo "Item ID:".$item_id."<br>";
+        // echo "Var ID:".$product->get_variation_id()."<br>";
+        // echo "Prod ID:".$product_id."<br>";
+        // echo "Sub Total:".$item_subtotal."<br>";
+
+        if( $product->is_type('variable') ) {
+            $current_product_price = get_post_meta($product_id, '_price', true);					
+        } else {
+            $current_product_price = $product->get_regular_price();
+        }
+
+        // # For Debuging:
+        // echo "Current Price:".$current_product_price."<br>";
+
+        if($current_product_price !== $item_subtotal)
+            wc_update_order_item_meta($item_id, '_line_subtotal', $current_product_price);
+    }
+}
+
+/*
+FIX DISCOUNT PRICE
+*/
+add_action('woocommerce_order_status_changed', 'func_fix_discount_price', 10, 4 );
+function func_fix_discount_price( $order_id, $old_status, $new_status, $order ) {
+    hook_fix_discount_price($order_id);
+}
