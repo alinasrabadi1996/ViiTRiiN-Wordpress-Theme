@@ -132,7 +132,6 @@ function display_payment_notice() {
     echo '<div id="payment_notice" style="display: none;background: #d22929;padding: 9px;color: #FFF;border-radius: 3px;margin-top: 3em;font-weight: bold;box-shadow: 0 0px 2px 0px rgba(0, 0, 0, 0.21176470588235294);font-size: 14px;border: 3px solid #bd3421;">در صورت انتخاب پرداخت آنلاین، سفارش شما در اولویت ارسال قرار گرفته و به صورت پیشتاز پست خواهد شد.</div>';
 }
 
-
 // add_action('woocommerce_after_cart_table', 'check_product_in_cart');
 // function check_product_in_cart() {
 //     foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
@@ -142,6 +141,11 @@ function display_payment_notice() {
 //         }
 //     }
 // }
+
+add_action('woocommerce_after_cart_table', 'display_notification_in_cart');
+function display_notification_in_cart() {
+    echo '<p class="coupon-description" style="background: #d61b1b;">جشنواره زمستانه ویترین؛ علاوه بر خریدتان، یک هدیه برای شما ارسال می شود.</p>';
+}
 
 /*
 Hook - FIX DISCOUNT PRICE (Dynamic Price Discount Plugin)
