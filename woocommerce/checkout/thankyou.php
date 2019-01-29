@@ -84,18 +84,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 				}
 			endif;
 			
-
-
 			/*
-			SEND SMS After Ordering
+			FIX DISCOUNT PRICE
 			*/
-// 			$sms_text = "فروشگاه اینترنتی ویترین.\r
-// مشتری گرامی خرید شما با کد سفارش ".$order->get_order_number()." با موفقیت ثبت شد. \r
-// https://viitriin.com
-// ";
-// 			SendSMS($sms_text, $billing_phone);
-			
-			
+			hook_fix_discount_price($order->id);
 			?>
 			
 			<p class="order-success__text">سفارش شما با موفقیت ثبت شد.</p>
