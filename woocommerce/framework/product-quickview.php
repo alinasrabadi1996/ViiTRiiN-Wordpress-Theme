@@ -21,9 +21,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div <?php post_class(); ?>> 
 		<div class="row quickview-modal-inner">
 			<?php
-				if ( $product->is_on_sale() ) {
-					wc_get_template( 'loop/sale-flash.php' );
-				}
+				// if ( $product->is_on_sale() ) {
+				// 	wc_get_template( 'loop/sale-flash.php' );
+				// }
 				wc_get_template( 'single-product/product-image.php' );
 			?>
 			<div class="col-md-6 col-content">
