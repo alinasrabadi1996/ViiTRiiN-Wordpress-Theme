@@ -84,7 +84,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 				}
 			endif;
 			
-
+			/*
+			FIX DISCOUNT PRICE
+			*/
+			hook_fix_discount_price($order->id);
 
 			/*
 			SEND SMS After Ordering
