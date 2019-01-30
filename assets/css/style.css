@@ -9175,6 +9175,22 @@ Winter Festival
 .winter-festival .snowflake:nth-of-type(9){left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s}
 
 
+@media only screen and (max-width:420px) {
+    .winter-festival .festival-details .title {
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 4px;
+    }
+    .winter-festival .festival-details .deposit {
+        top: -25px;
+    }
+}
+
+@media only screen and (max-width:340px) {
+    .winter-festival .festival-details .deposit {
+        display: none;
+    }
+}
 
 
 
