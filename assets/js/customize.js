@@ -165,13 +165,15 @@ jQuery(function () {
         }
 
         var mainHeaderScroll = function () {
-            if (isHomepageHeaderSticky) {
+            if (window.scrollY > scrollOffset) {
+                if (!isHomepageHeaderSticky) {
+                    document.body.classList.add("homepage-header-sticky");
+                    isHomepageHeaderSticky = true;
+                }
+            }
+            else if (isHomepageHeaderSticky) {
                 document.body.classList.remove("homepage-header-sticky");
                 isHomepageHeaderSticky = false;
-            }
-            else if (!isHomepageHeaderSticky && window.scrollY > scrollOffset) {
-                document.body.classList.add("homepage-header-sticky");
-                isHomepageHeaderSticky = true;
             }
         }
 
@@ -198,14 +200,17 @@ jQuery(function () {
         }
         
         var productHeaderScroll = function () {
-            if (isProductHeaderSticky) {
+            if(window.scrollY > scrollOffset) {
+                if (!isProductHeaderSticky) {
+                    productHeader.classList.add("config-product-header-fix");
+                    productHeaderName.classList.add("config-header-product-name-fix");
+                    isProductHeaderSticky = true;
+                }
+            }
+            else if (isProductHeaderSticky) {
                 productHeader.classList.remove("config-product-header-fix");
                 productHeaderName.classList.remove("config-header-product-name-fix");
-            }
-            else if(!isProductHeaderSticky && window.scrollY > scrollOffset) {
-                productHeader.classList.add("config-product-header-fix");
-                productHeaderName.classList.add("config-header-product-name-fix");
-                isProductHeaderSticky = true;
+                isProductHeaderSticky = false;
             }
         }
 
