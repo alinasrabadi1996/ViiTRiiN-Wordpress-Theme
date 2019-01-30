@@ -1,4 +1,18 @@
-jQuery(document).ready(function() {
+// Support passive events
+// https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md#feature-detection
+var supportsPassive = false;
+try {
+  var opts = Object.defineProperty({}, 'passive', {
+    get: function() {
+      supportsPassive = true;
+    }
+  });
+  window.addEventListener("testPassive", null, opts);
+  window.removeEventListener("testPassive", null, opts);
+} catch (e) {}
+
+jQuery(function () {
+    'use strict';
     // jQuery(".cart-btn").click(function() {
     //     jQuery("#shopping-cart").toggleClass('active-dropdown');
     // });
@@ -134,31 +148,58 @@ jQuery(document).ready(function() {
     });
 
     // Main Header Sticky If Topbar Exist
-    if(jQuery("#main-topbar").length) {
-        jQuery(window).scroll(function() {
-            if(jQuery(this).scrollTop() > 60) {
-                jQuery("body").addClass("homepage-header-sticky");
-            } else {
-                jQuery("body").removeClass("homepage-header-sticky");
+    var mainTopbarSelector = document.querySelector(".main-topbar");
+    if (mainTopbarSelector) {
+        var isHomepageHeaderSticky = false;
+        var scrollOffset = parseInt( mainTopbarSelector.getAttribute("offset") );
+        var main_header_scroll = function () {
+            if (window.scrollY > scrollOffset && isHomepageHeaderSticky === false) {
+                document.body.classList.add("homepage-header-sticky");
+                isHomepageHeaderSticky = true;
             }
-        });
+            else if (isHomepageHeaderSticky === true) {
+                document.body.classList.remove("homepage-header-sticky");
+                isHomepageHeaderSticky = false;
+            }
+        }
+        window.addEventListener('scroll', main_header_scroll, supportsPassive ? { passive: true } : false); 
+    }
+
+    // Product Title Sticky (Single Product)
+    if(document.querySelector(".config-product-header")) {
+        var product_header_scroll = function() {
+            var isProductHeaderSticky = false;
+            var productHeader = jQuery(".config-product-header");
+            var productHeaderName = jQuery(".config-header-product-name");
+            var customizeProduct = jQuery(".customize-product");
+            if(window.scrollY > 61 && isProductHeaderSticky === false) {
+                productHeader.classList.add("config-product-header-fix");
+                productHeaderName.classList.add("config-header-product-name-fix");
+                customizeProduct.style.marginTop = '80px'
+                isProductHeaderSticky = true;
+            } else if (isProductHeaderSticky === true) {
+                productHeader.classList.remove("config-product-header-fix");
+                productHeaderName.classList.remove("config-header-product-name-fix");
+                customizeProduct.style.marginTop = '0px'
+            }
+        }
+        window.addEventListener('scroll', product_header_scroll, supportsPassive ? { passive: true } ? false);
     }
 });
 
 
-jQuery(window).on('scroll', function() {
-    var ww = jQuery(window).scrollTop()
-    if (ww > 61) {
-        jQuery(".config-product-header").addClass("config-product-header-fix");
-        jQuery(".config-header-product-name").addClass("config-header-product-name-fix");
-        jQuery(".customize-product").css("margin-top","80px");
-    }else{
-        jQuery(".config-product-header").removeClass("config-product-header-fix");
-        jQuery(".config-header-product-name").removeClass("config-header-product-name-fix");
-        jQuery(".customize-product").css("margin-top","0");
-    }
-    
-});
+// jQuery(window).on('scroll', function() {
+//     var ww = jQuery(window).scrollTop()
+//     if (ww > 61) {
+//         jQuery(".config-product-header").addClass("config-product-header-fix");
+//         jQuery(".config-header-product-name").addClass("config-header-product-name-fix");
+//         jQuery(".customize-product").css("margin-top","80px");
+//     }else{
+//         jQuery(".config-product-header").removeClass("config-product-header-fix");
+//         jQuery(".config-header-product-name").removeClass("config-header-product-name-fix");
+//         jQuery(".customize-product").css("margin-top","0");
+//     }
+// });
 
 
 /* PRODUCT INTRO TOP-HEADER STICKY  */

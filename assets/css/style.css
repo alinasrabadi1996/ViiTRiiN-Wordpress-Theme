@@ -2794,7 +2794,7 @@ HEADER
 position: fixed;
 } */
 
-.homepage-header-sticky #main-header {
+.homepage.homepage-header-sticky #main-header {
     position: fixed;
     top: 0;
     right: 0;
@@ -7684,7 +7684,7 @@ SLIDER
 padding-top: 70px;
 } */
 
-.homepage-header-sticky .main-slider {
+.homepage.homepage-header-sticky .main-slider {
     padding-top: 70px;
 }
 

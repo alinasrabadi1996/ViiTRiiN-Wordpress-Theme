@@ -63,7 +63,7 @@ get_template_part('framework/pazh', 'sidebar-menu'); ?>
     </div>
 </div>
 
-<div id="main-topbar" class="winter-festival">
+<div class="main-topbar winter-festival" data-offset="60">
     <div class="snowflakes" aria-hidden="true">
         <div class="festival-details">
             <div class="title">جشنواره زمستانه ویترین</div>
