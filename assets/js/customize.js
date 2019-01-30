@@ -197,7 +197,7 @@ jQuery(function () {
             return;
         }
         
-        var productHeaderScroll = function() {
+        var productHeaderScroll = function () {
             if (isProductHeaderSticky) {
                 productHeader.classList.remove("config-product-header-fix");
                 productHeaderName.classList.remove("config-header-product-name-fix");
@@ -208,9 +208,10 @@ jQuery(function () {
                 isProductHeaderSticky = true;
             }
         }
-        
-        window.addEventListener('scroll', productHeaderScroll, supportsPassive ? { passive: true } ? false);
-    });
+
+        window.addEventListener('scroll', productHeaderScroll, supportsPassive ? { passive: true } : false);
+    })();
+
 });
 
 
