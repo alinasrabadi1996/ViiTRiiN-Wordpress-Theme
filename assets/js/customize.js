@@ -254,7 +254,7 @@ jQuery(function () {
                     isMainHeaderSticky = true;
                 }
             }
-            else if (isHomepageHeaderSticky) {
+            else if (isMainHeaderSticky) {
                 productTopHeader.classList.remove("sticky");
                 isMainHeaderSticky = false;
             }
