@@ -191,6 +191,13 @@ jQuery(function () {
 
         var isProductHeaderSticky = false;
         var scrollOffset = parseInt( productHeaderName.getAttribute("data-offset") );
+        
+        var mainTopbar = document.querySelector(".main-topbar");
+        if (mainTopbar) {
+            var mainTopbarScrollOffset = parseInt( mainTopbar.getAttribute("data-offset") );
+            scrollOffset += mainTopbarScrollOffset;
+        }
+
         if (Number.isNaN(scrollOffset) || scrollOffset <= 0) {
             console.warn('Element .config-header-product-name attribute data-offset is not valid!', {
                 productHeaderName: productHeaderName, 

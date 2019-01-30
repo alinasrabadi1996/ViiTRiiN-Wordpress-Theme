@@ -86,7 +86,7 @@
         </footer>
 
         <script src="<?php echo get_template_uri(); ?>/js/init.js?v=1"></script>
-        <script src="<?php echo get_template_uri(); ?>/js/customize.js?v=2.4"></script>
+        <script src="<?php echo get_template_uri(); ?>/js/customize.js?v=2.5"></script>
 
         <script type="text/javascript">
             paceOptions = {
