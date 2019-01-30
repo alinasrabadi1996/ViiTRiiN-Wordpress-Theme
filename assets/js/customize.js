@@ -1,4 +1,18 @@
-jQuery(document).ready(function() {
+// Support passive events
+// https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md#feature-detection
+var supportsPassive = false;
+try {
+  var opts = Object.defineProperty({}, 'passive', {
+    get: function() {
+      supportsPassive = true;
+    }
+  });
+  window.addEventListener("testPassive", null, opts);
+  window.removeEventListener("testPassive", null, opts);
+} catch (e) {}
+
+jQuery(function () {
+    'use strict';
     // jQuery(".cart-btn").click(function() {
     //     jQuery("#shopping-cart").toggleClass('active-dropdown');
     // });
@@ -132,22 +146,103 @@ jQuery(document).ready(function() {
     jQuery("#main-header .search .dgwt-wcas-search-submit .icon").click(function(e) {
         e.preventDefault();
     });
+
+    // Main Header Sticky If Topbar Exist
+    (function () {
+        'use strict';
+        
+        var stickySelector = document.querySelector(".main-topbar");
+        if (!stickySelector) return;
+
+        var isHomepageHeaderSticky = false;
+        var scrollOffset = parseInt( stickySelector.getAttribute("data-offset") );
+        if (Number.isNaN(scrollOffset) || scrollOffset <= 0) {
+            console.warn('Element .main-topbar attribute data-offset is not valid!', {
+                stickySelector: stickySelector, 
+                scrollOffset: scrollOffset,
+            });
+            return;
+        }
+
+        var mainHeaderScroll = function () {
+            if (window.scrollY > scrollOffset) {
+                if (!isHomepageHeaderSticky) {
+                    document.body.classList.add("homepage-header-sticky");
+                    isHomepageHeaderSticky = true;
+                }
+            }
+            else if (isHomepageHeaderSticky) {
+                document.body.classList.remove("homepage-header-sticky");
+                isHomepageHeaderSticky = false;
+            }
+        }
+
+        window.addEventListener('scroll', mainHeaderScroll, supportsPassive ? { passive: true } : false); 
+    })();
+
+
+    // Product Title Sticky (Single Product)
+    (function () {
+        'use strict';
+
+        var productHeaderName = document.querySelector(".config-header-product-name");
+        var productHeader = document.querySelector(".config-product-header");
+        var shopMain = document.querySelector("#shop-main");
+        
+        if(!productHeader || !productHeaderName) return;
+
+        var isProductHeaderSticky = false;
+        var scrollOffset = parseInt( productHeaderName.getAttribute("data-offset") );
+        
+        var mainTopbar = document.querySelector(".main-topbar");
+        if (mainTopbar) {
+            var mainTopbarScrollOffset = parseInt( mainTopbar.getAttribute("data-offset") );
+            scrollOffset += mainTopbarScrollOffset;
+        }
+
+        if (Number.isNaN(scrollOffset) || scrollOffset <= 0) {
+            console.warn('Element .config-header-product-name attribute data-offset is not valid!', {
+                productHeaderName: productHeaderName, 
+                scrollOffset: scrollOffset,
+            });
+            return;
+        }
+        
+        var productHeaderScroll = function () {
+            if(window.scrollY > scrollOffset) {
+                if (!isProductHeaderSticky) {
+                    productHeader.classList.add("config-product-header-fix");
+                    productHeaderName.classList.add("config-header-product-name-fix");
+                    shopMain.style.marginTop = '65px';
+                    isProductHeaderSticky = true;
+                }
+            }
+            else if (isProductHeaderSticky) {
+                productHeader.classList.remove("config-product-header-fix");
+                productHeaderName.classList.remove("config-header-product-name-fix");
+                shopMain.style.marginTop = '0px';
+                isProductHeaderSticky = false;
+            }
+        }
+
+        window.addEventListener('scroll', productHeaderScroll, supportsPassive ? { passive: true } : false);
+    })();
+
 });
 
 
-jQuery(window).on('scroll', function() {
-    var ww = jQuery(window).scrollTop()
-    if (ww > 61) {
-        jQuery(".config-product-header").addClass("config-product-header-fix");
-        jQuery(".config-header-product-name").addClass("config-header-product-name-fix");
-        jQuery(".customize-product").css("margin-top","80px");
-    }else{
-        jQuery(".config-product-header").removeClass("config-product-header-fix");
-        jQuery(".config-header-product-name").removeClass("config-header-product-name-fix");
-        jQuery(".customize-product").css("margin-top","0");
-    }
-    
-});
+// jQuery(window).on('scroll', function() {
+//     var ww = jQuery(window).scrollTop()
+//     if (ww > 61) {
+//         jQuery(".config-product-header").addClass("config-product-header-fix");
+//         jQuery(".config-header-product-name").addClass("config-header-product-name-fix");
+//         jQuery(".customize-product").css("margin-top","80px");
+//     }else{
+//         jQuery(".config-product-header").removeClass("config-product-header-fix");
+//         jQuery(".config-header-product-name").removeClass("config-header-product-name-fix");
+//         jQuery(".customize-product").css("margin-top","0");
+//     }
+// });
 
 
 /* PRODUCT INTRO TOP-HEADER STICKY  */

@@ -2790,8 +2790,14 @@ HEADER
   position: relative;
 }
 
-.fontpage #main-header {
-  position: fixed;
+/* .homepage #main-header {
+position: fixed;
+} */
+
+.homepage.homepage-header-sticky #main-header {
+    position: fixed;
+    top: 0;
+    right: 0;
 }
 
 #main-header .header-col {
@@ -4608,13 +4614,6 @@ PAGE : INTRODUCTION
     color: #727276;    
 }
 
-/* CUTOMIZE PRODUCT */
-.customize-product {
-    position: relative;    
-    background: #FAFAFA;
-    width: 90%;
-    margin: 0 auto;
-}
 
 .choose-color {
     position: relative;
@@ -7674,8 +7673,12 @@ SLIDER
   position: relative;		
 }
 
-.fontpage .main-slider {
-  padding-top: 70px;
+/* .homepage .main-slider {
+padding-top: 70px;
+} */
+
+.homepage.homepage-header-sticky .main-slider {
+    padding-top: 70px;
 }
 
 .main-slider .rev_slider_wrapper {
@@ -9104,69 +9107,83 @@ ADDITONAL
 /*
 Winter Festival
 */
-#winter-festival {
+.winter-festival {
     background: #3ca5df;
     height: 60px;
     overflow: hidden;
-    color: #FFF;
+    color: #fff;
+    box-shadow: 0px -2px 11px -5px rgba(0, 0, 0, 0.5490196078431373) inset;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
-.festival-details {
+.winter-festival .festival-details {
     width: 100%;
     padding: 15px;
-    position: relative;
 }
 
-.festival-details .title {
+.winter-festival .festival-details .title {
     font-size: 20px;
     font-weight: bold;
 }
-  
-.festival-details .deposit {
+
+.winter-festival .festival-details .deposit {
     float: left;
     position: relative;
-    top: -31px;
-    font-size: 15px;
-    border: 1px solid #3182b1;
+    top: -28px;
+    font-size: 14px;
     padding: 6px 15px;
-    background: #ffffff;
-    border-radius: 30px;
-    font-weight: bold;
-    user-select: none;
-    color: #3ca4df;
+    background: #fff;
+    border-radius: 33px;
+    font-weight: 700;
+    color: #303033;
 }
-  
-.snowflakes {
+
+.winter-festival .snowflakes {
     position: relative;
 }
-  
-.snowflake {
+
+.winter-festival .snowflake {
     color: #fff;
     font-size: 1.3em;
     font-family: Arial;
     position: absolute;
     opacity: .9;
 }
-  
+
 @-webkit-keyframes snowflakes-fall{0%{top:-30%}100%{top:100%}}
 @-webkit-keyframes snowflakes-shake{0%{-webkit-transform:translateX(0px);transform:translateX(0px)}50%{-webkit-transform:translateX(40px);transform:translateX(40px)}100%{-webkit-transform:translateX(0px);transform:translateX(0px)}}
 @keyframes snowflakes-fall{0%{top:-30%}100%{top:100%}}
 @keyframes snowflakes-shake{0%{transform:translateX(0px)}50%{transform:translateX(40px)}100%{transform:translateX(0px)}}
-.snowflake{position:absolute;top:-30%;z-index:9999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default;-webkit-animation-name:snowflakes-fall,snowflakes-shake;-webkit-animation-duration:2s,2s;-webkit-animation-timing-function:linear,ease-in-out;-webkit-animation-iteration-count:infinite,infinite;-webkit-animation-play-state:running,running;animation-name:snowflakes-fall,snowflakes-shake;animation-duration:2s,2s;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;animation-play-state:running,running}
-.snowflake:nth-of-type(0){left:10%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s}
-.snowflake:nth-of-type(1){left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}
-.snowflake:nth-of-type(2){left:20%;-webkit-animation-delay:4s,.3s;animation-delay:4s,.3s}
-.snowflake:nth-of-type(3){left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s}
-.snowflake:nth-of-type(4){left:40%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}
-.snowflake:nth-of-type(5){left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s}
-.snowflake:nth-of-type(6){left:60%;-webkit-animation-delay:4s,1s;animation-delay:4s,1s}
-.snowflake:nth-of-type(7){left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s}
-.snowflake:nth-of-type(8){left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}
-.snowflake:nth-of-type(9){left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s}
-  
-  
-  
+.winter-festival .snowflake{position:absolute;top:-30%;z-index:9999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default;-webkit-animation-name:snowflakes-fall,snowflakes-shake;-webkit-animation-duration:2s,2s;-webkit-animation-timing-function:linear,ease-in-out;-webkit-animation-iteration-count:infinite,infinite;-webkit-animation-play-state:running,running;animation-name:snowflakes-fall,snowflakes-shake;animation-duration:2s,2s;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;animation-play-state:running,running}
+.winter-festival .snowflake:nth-of-type(0){left:10%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s}
+.winter-festival .snowflake:nth-of-type(1){left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}
+.winter-festival .snowflake:nth-of-type(2){left:20%;-webkit-animation-delay:4s,.3s;animation-delay:4s,.3s}
+.winter-festival .snowflake:nth-of-type(3){left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s}
+.winter-festival .snowflake:nth-of-type(4){left:40%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}
+.winter-festival .snowflake:nth-of-type(5){left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s}
+.winter-festival .snowflake:nth-of-type(6){left:60%;-webkit-animation-delay:4s,1s;animation-delay:4s,1s}
+.winter-festival .snowflake:nth-of-type(7){left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s}
+.winter-festival .snowflake:nth-of-type(8){left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}
+.winter-festival .snowflake:nth-of-type(9){left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s}
 
+
+@media only screen and (max-width:420px) {
+    .winter-festival .festival-details .title {
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 4px;
+    }
+    .winter-festival .festival-details .deposit {
+        top: -25px;
+    }
+}
+
+@media only screen and (max-width:340px) {
+    .winter-festival .festival-details .deposit {
+        display: none;
+    }
+}
 
 /*
 MEDIA QUERIES
