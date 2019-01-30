@@ -187,6 +187,8 @@ jQuery(function () {
 
         var productHeaderName = document.querySelector(".config-header-product-name");
         var productHeader = document.querySelector(".config-product-header");
+        var shopMain = document.querySelector("#shop-main");
+        
         if(!productHeader || !productHeaderName) return;
 
         var isProductHeaderSticky = false;
@@ -211,12 +213,14 @@ jQuery(function () {
                 if (!isProductHeaderSticky) {
                     productHeader.classList.add("config-product-header-fix");
                     productHeaderName.classList.add("config-header-product-name-fix");
+                    shopMain.style.marginTop = '65px';
                     isProductHeaderSticky = true;
                 }
             }
             else if (isProductHeaderSticky) {
                 productHeader.classList.remove("config-product-header-fix");
                 productHeaderName.classList.remove("config-header-product-name-fix");
+                shopMain.style.marginTop = '0px';
                 isProductHeaderSticky = false;
             }
         }
