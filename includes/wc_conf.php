@@ -30,7 +30,7 @@ function single_heading() {
     ?>
     <div class="config-product-header">
         <div class="row">
-            <h3 class="col-md-12 config-header-product-name"><?php the_title(); ?></h3>
+            <h3 class="col-md-12 config-header-product-name" data-offset="61"><?php the_title(); ?></h3>
         </div>
     </div>
     <?php

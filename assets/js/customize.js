@@ -148,43 +148,69 @@ jQuery(function () {
     });
 
     // Main Header Sticky If Topbar Exist
-    var mainTopbarSelector = document.querySelector(".main-topbar");
-    if (mainTopbarSelector) {
+    (function () {
+        'use strict';
+        
+        var stickySelector = document.querySelector(".main-topbar");
+        if (!stickySelector) return;
+
         var isHomepageHeaderSticky = false;
-        var scrollOffset = parseInt( mainTopbarSelector.getAttribute("offset") );
-        var main_header_scroll = function () {
-            if (window.scrollY > scrollOffset && isHomepageHeaderSticky === false) {
-                document.body.classList.add("homepage-header-sticky");
-                isHomepageHeaderSticky = true;
-            }
-            else if (isHomepageHeaderSticky === true) {
+        var scrollOffset = parseInt( stickySelector.getAttribute("data-offset") );
+        if (Number.isNaN(scrollOffset) || scrollOffset <= 0) {
+            console.warn('Element .main-topbar attribute data-offset is not valid!', {
+                stickySelector: stickySelector, 
+                scrollOffset: scrollOffset,
+            });
+            return;
+        }
+
+        var mainHeaderScroll = function () {
+            if (isHomepageHeaderSticky) {
                 document.body.classList.remove("homepage-header-sticky");
                 isHomepageHeaderSticky = false;
             }
-        }
-        window.addEventListener('scroll', main_header_scroll, supportsPassive ? { passive: true } : false); 
-    }
-
-    // Product Title Sticky (Single Product)
-    if(document.querySelector(".config-product-header")) {
-        var product_header_scroll = function() {
-            var isProductHeaderSticky = false;
-            var productHeader = jQuery(".config-product-header");
-            var productHeaderName = jQuery(".config-header-product-name");
-            var customizeProduct = jQuery(".customize-product");
-            if(window.scrollY > 61 && isProductHeaderSticky === false) {
-                productHeader.classList.add("config-product-header-fix");
-                productHeaderName.classList.add("config-header-product-name-fix");
-                customizeProduct.style.marginTop = '80px'
-                isProductHeaderSticky = true;
-            } else if (isProductHeaderSticky === true) {
-                productHeader.classList.remove("config-product-header-fix");
-                productHeaderName.classList.remove("config-header-product-name-fix");
-                customizeProduct.style.marginTop = '0px'
+            else if (!isHomepageHeaderSticky && window.scrollY > scrollOffset) {
+                document.body.classList.add("homepage-header-sticky");
+                isHomepageHeaderSticky = true;
             }
         }
-        window.addEventListener('scroll', product_header_scroll, supportsPassive ? { passive: true } ? false);
-    }
+
+        window.addEventListener('scroll', mainHeaderScroll, supportsPassive ? { passive: true } : false); 
+    })();
+
+
+    // Product Title Sticky (Single Product)
+    (function () {
+        'use strict';
+
+        var productHeader = document.querySelector(".config-product-header");
+        var productHeaderName = document.querySelector(".config-header-product-name");
+        if(!productHeader || !productHeaderName) return;
+
+        var isProductHeaderSticky = false;
+        var scrollOffset = parseInt( productHeaderName.getAttribute("data-offset") );
+        if (Number.isNaN(scrollOffset) || scrollOffset <= 0) {
+            console.warn('Element .config-header-product-name attribute data-offset is not valid!', {
+                productHeaderName: productHeaderName, 
+                scrollOffset: scrollOffset,
+            });
+            return;
+        }
+        
+        var productHeaderScroll = function() {
+
+            if (isProductHeaderSticky) {
+                productHeader.classList.remove("config-product-header-fix");
+                productHeaderName.classList.remove("config-header-product-name-fix");
+            }
+            else if(!isProductHeaderSticky && window.scrollY > scrollOffset) {
+                productHeader.classList.add("config-product-header-fix");
+                productHeaderName.classList.add("config-header-product-name-fix");
+                isProductHeaderSticky = true;
+            }
+        }
+        window.addEventListener('scroll', productHeaderScroll, supportsPassive ? { passive: true } ? false);
+    });
 });
 
 
