@@ -2790,8 +2790,14 @@ HEADER
   position: relative;
 }
 
-.fontpage #main-header {
-  position: fixed;
+/* .homepage #main-header {
+position: fixed;
+} */
+
+.homepage-header-sticky #main-header {
+    position: fixed;
+    top: 0;
+    right: 0;
 }
 
 #main-header .header-col {
@@ -7674,8 +7680,12 @@ SLIDER
   position: relative;		
 }
 
-.fontpage .main-slider {
-  padding-top: 70px;
+/* .homepage .main-slider {
+padding-top: 70px;
+} */
+
+.homepage-header-sticky .main-slider {
+    padding-top: 70px;
 }
 
 .main-slider .rev_slider_wrapper {
