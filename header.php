@@ -6,7 +6,7 @@
 	<meta name="description" content="<?php bloginfo('description'); ?>" />
 	<meta name="keywords" content="" />
 	<link rel="pingback" href="<?php echo bloginfo( 'pingback_url' ); ?>">
-    <link href="<?php echo get_template_uri(); ?>/css/init.css?v=1" rel="stylesheet" />
+    <link href="<?php echo get_template_uri(); ?>/css/init.css?v=1.1" rel="stylesheet" />
     <link href="<?php echo get_template_uri(); ?>/css/bootstrap.css" rel="stylesheet" />
     <link href="<?php echo get_template_uri(); ?>/css/style.css?v=3.3" rel="stylesheet" />
     <?php wp_head(); ?>
