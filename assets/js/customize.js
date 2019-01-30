@@ -183,8 +183,8 @@ jQuery(function () {
     (function () {
         'use strict';
 
-        var productHeader = document.querySelector(".config-product-header");
         var productHeaderName = document.querySelector(".config-header-product-name");
+        var productHeader = document.querySelector(".config-product-header");
         if(!productHeader || !productHeaderName) return;
 
         var isProductHeaderSticky = false;
@@ -198,7 +198,6 @@ jQuery(function () {
         }
         
         var productHeaderScroll = function() {
-
             if (isProductHeaderSticky) {
                 productHeader.classList.remove("config-product-header-fix");
                 productHeaderName.classList.remove("config-header-product-name-fix");
@@ -209,6 +208,7 @@ jQuery(function () {
                 isProductHeaderSticky = true;
             }
         }
+        
         window.addEventListener('scroll', productHeaderScroll, supportsPassive ? { passive: true } ? false);
     });
 });
