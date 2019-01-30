@@ -228,34 +228,42 @@ jQuery(function () {
         window.addEventListener('scroll', productHeaderScroll, supportsPassive ? { passive: true } : false);
     })();
 
-});
+    /* PRODUCT INTRO TOP-HEADER STICKY  */
+    (function () {
+        'use strict';
+        
+        var stickySelector = document.querySelector("#main-header");
+        var productTopHeader = document.querySelector("#product-top-header");
+        if (!stickySelector || !productTopHeader) return;
 
+        var stickySelectorHeight = jQuery(stickySelector).height();
 
-// jQuery(window).on('scroll', function() {
-//     var ww = jQuery(window).scrollTop()
-//     if (ww > 61) {
-//         jQuery(".config-product-header").addClass("config-product-header-fix");
-//         jQuery(".config-header-product-name").addClass("config-header-product-name-fix");
-//         jQuery(".customize-product").css("margin-top","80px");
-//     }else{
-//         jQuery(".config-product-header").removeClass("config-product-header-fix");
-//         jQuery(".config-header-product-name").removeClass("config-header-product-name-fix");
-//         jQuery(".customize-product").css("margin-top","0");
-//     }
-// });
+        if (window.innerWidth <= 768) return;
 
-
-/* PRODUCT INTRO TOP-HEADER STICKY  */
-var MainHeader = jQuery('#main-header').height();
-jQuery(window).scroll(function() {
-    if(jQuery(window).width() > 768) {
-        if( jQuery(this).scrollTop() > MainHeader ) {
-            jQuery("#product-top-header").addClass("sticky");
-        } else {
-            jQuery("#product-top-header").removeClass("sticky");
+        var mainTopbar = document.querySelector(".main-topbar");
+        if (mainTopbar) {
+            var mainTopbarScrollOffset = parseInt( mainTopbar.getAttribute("data-offset") );
+            stickySelectorHeight += mainTopbarScrollOffset;
         }
-    }
+
+        var isMainHeaderSticky = false;
+        var mainHeaderScroll = function () {
+            if (window.scrollY > stickySelectorHeight) {
+                if (!isMainHeaderSticky) {
+                    productTopHeader.classList.add("sticky");
+                    isMainHeaderSticky = true;
+                }
+            }
+            else if (isHomepageHeaderSticky) {
+                productTopHeader.classList.remove("sticky");
+                isMainHeaderSticky = false;
+            }
+        }
+
+        window.addEventListener('scroll', mainHeaderScroll, supportsPassive ? { passive: true } : false); 
+    })();
 });
+
 
 /*
 QUICK VIEW
