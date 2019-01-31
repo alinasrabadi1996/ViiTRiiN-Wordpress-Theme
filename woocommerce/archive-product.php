@@ -182,6 +182,7 @@
 			}
 		}else{
 			jQuery("#main-header").css("position", "fixed");
+			jQuery("#main-header").css("top", "0");
 			jQuery(".categories-header-slider").removeClass("has-fixbar");
 		}
 	});
