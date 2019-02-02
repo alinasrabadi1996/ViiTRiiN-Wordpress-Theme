@@ -48,15 +48,8 @@ $stock_status = $product->get_stock_status();
                         <?php
                         if( $product->is_type( 'simple' ) && $price_html = $product->get_price_html($product_id) ) {
                             echo $price_html;
-                        } elseif ( $product->product_type=='variable' && $product->get_price_html($product_id) ) {
-                        	$available_variations = $product->get_available_variations();
-                        	$count = count($available_variations) - 1;
-                        	$variation_id = $available_variations[$count]['variation_id'];
-                        	$variable_product1 = new WC_Product_Variation( $variation_id );
-                        	$regular_price = $variable_product1->regular_price;
-                        	echo wc_price($regular_price);
                         } else {
-                            echo wc_price(get_post_meta( $product_id, '_regular_price', true));
+                            $product->get_price_html();
                         }
                         ?>
                         </p>
