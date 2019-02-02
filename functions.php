@@ -157,12 +157,14 @@ function hook_fix_discount_price($order_id) {
         $product_id = $item->get_product_id(); // Return ID Simple & Variable Product
         $product = wc_get_product($product_id);
         $item_subtotal = wc_get_order_item_meta($item_id, '_line_subtotal', true);
+        $item_qty = wc_get_order_item_meta($item_id, '_qty', true);
+        if(empty($item_qty)) $item_qty = 1;
 
         // # For Debuging:
-        // echo "Item ID:".$item_id."<br>";
-        // echo "Var ID:".$product->get_variation_id()."<br>";
-        // echo "Prod ID:".$product_id."<br>";
-        // echo "Sub Total:".$item_subtotal."<br>";
+        // error_log("Item ID:".$item_id, 0);
+        // error_log("Var ID:".$product->get_variation_id(), 0);
+        // error_log("Prod ID:".$product_id, 0);
+        // error_log("Sub Total:".$item_subtotal, 0);
 
         if( $product->is_type('variable') ) {
             $current_product_price = get_post_meta($product_id, '_price', true);					
@@ -170,11 +172,13 @@ function hook_fix_discount_price($order_id) {
             $current_product_price = $product->get_regular_price();
         }
 
-        // # For Debuging:
-        // echo "Current Price:".$current_product_price."<br>";
+        $current_product_price *= $item_qty; // Mul With Quantity
 
-        if($current_product_price !== $item_subtotal)
-            wc_update_order_item_meta($item_id, '_line_subtotal', $current_product_price);
+        // # For Debuging:
+        // error_log("Current Price:".$current_product_price, 0);
+
+
+        if($current_product_price !== $item_subtotal) wc_update_order_item_meta($item_id, '_line_subtotal', $current_product_price);
     }
 }
 
