@@ -49,7 +49,7 @@ $stock_status = $product->get_stock_status();
                         if( $product->is_type( 'simple' ) && $price_html = $product->get_price_html($product_id) ) {
                             echo $price_html;
                         } else {
-                            $product->get_price_html();
+                            echo $product->get_price_html();
                         }
                         ?>
                         </p>
