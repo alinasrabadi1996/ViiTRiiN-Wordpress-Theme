@@ -63,6 +63,7 @@ get_template_part('framework/pazh', 'sidebar-menu'); ?>
     </div>
 </div>
 
+<? /* Winter Festival Banner
 <div class="main-topbar winter-festival" data-offset="60">
     <div class="snowflakes" aria-hidden="true">
         <div class="festival-details">
@@ -81,6 +82,7 @@ get_template_part('framework/pazh', 'sidebar-menu'); ?>
         <div class="snowflake"><img draggable="false" class="emoji" alt="❄" src="https://s.w.org/images/core/emoji/11/svg/2744.svg"></div>
     </div>
 </div>
+*/ ?>
 
 <header id="main-header" class="container-fluid static">
     <div class="search">
