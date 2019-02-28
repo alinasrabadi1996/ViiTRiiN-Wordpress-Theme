@@ -112,6 +112,7 @@ $pages = array('profile', 'orders', 'creadits', 'logout', 'methods');
                             <input class="input" type="number" name="mobile" id="mobile">
                         </div>
                         <div class="form-group submit">
+                            <div class="response"></div>
                             <input class="button" type="submit" name="order-tracking" value="ادامه">
                         </div>
                     </div>
@@ -121,7 +122,7 @@ $pages = array('profile', 'orders', 'creadits', 'logout', 'methods');
                             <input class="input" type="number" name="verify-code" id="verify-code">
                         </div>
                         <div class="form-group submit">
-                            <div id="response"></div>
+                            <div class="response"></div>
                             <input class="button" type="submit" name="order-tracking" value="تایید">
                         </div>
                     </div>
@@ -154,19 +155,21 @@ $pages = array('profile', 'orders', 'creadits', 'logout', 'methods');
                 jQuery("#mobile-form").hide();
                 jQuery("#verification-form").show();
                 jQuery("#verification_sts").val("get-code");
-                jQuery("#response").html("<span class='success'>کد فعال سازی ارسال شده را وارد کنید.<span>");
+                jQuery(".response").html("<span class='success'>کد فعال سازی ارسال شده را وارد کنید.<span>");
             } else if(result == "verified") {
-                jQuery("#response").html("<span class='success'>اعتبار سنجی انجام شد. در حال انتقال...<span>");
+                jQuery(".response").html("<span class='success'>اعتبار سنجی انجام شد. در حال انتقال...<span>");
                 location.reload();
             } else if(result == "invalid") {
-                jQuery("#response").html("<span class='failed'>کد فعال سازی صحیح نمی باشد.<span>");
+                jQuery(".response").html("<span class='failed'>کد فعال سازی صحیح نمی باشد.<span>");
             } else if(result == "API_Err") {
-                jQuery("#response").html("<span class='failed'>خطا در ارسال پیامک! لطفا دوباره تلاش کنید<span>");
+                jQuery(".response").html("<span class='failed'>خطا در ارسال پیامک! لطفا دوباره تلاش کنید<span>");
+            } else if(result == "exceed_time") {
+                jQuery(".response").html("<span class='failed'>خطا! دقایقی دیگر دوباره تلاش کنید.<span>");
             } else {
-                jQuery("#response").html("<span class='failed'>سیستم با خطا مواجه شد! لطفا دوباره تلاش کنید.<span>");
+                jQuery(".response").html("<span class='failed'>سیستم با خطا مواجه شد! لطفا دوباره تلاش کنید.<span>");
             }
             jQuery("#loading").hide();
-            //console.log(result);
+            // console.log(result);
         });
     }
 </script>
