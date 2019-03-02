@@ -142,7 +142,7 @@ function display_payment_notice() {
 //     }
 // }
 
-add_action('woocommerce_after_cart_table', 'display_notification_in_cart');
+// add_action('woocommerce_after_cart_table', 'display_notification_in_cart');
 // function display_notification_in_cart() {
 //     echo '<p class="coupon-description" style="background: rgba(84, 62, 155, 0.8);">جشنواره زمستانه ویترین؛ علاوه بر خریدتان، یک هدیه برای شما ارسال می شود.</p>';
 // }
