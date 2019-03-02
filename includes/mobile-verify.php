@@ -1,4 +1,8 @@
 <?php
+define( 'SHORTINIT', true );
+require_once( $_SERVER['DOCUMENT_ROOT'] . '/wp-load.php' );
+global $wpdb;
+
 if( !isset($_SESSION) ) {
     session_start();
 }
@@ -13,7 +17,44 @@ if( isset($_POST['sts']) ) :
             $_SESSION['verfied_code'] = rand(1000, 9999);
             $assigned_code = $_SESSION['verfied_code'];
             $sms_text = "کد فعال سازی شما در ویترین: $assigned_code";
-            $send_sms = SendSMS($sms_text, $_SESSION['mobile_entry']);
+            
+            //
+            // Prevent too many requests
+            //
+            $current_date = date("Y-m-d H:i:s");
+            $result = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}sms_list WHERE phone = $_SESSION[mobile_entry] ORDER BY ID DESC Limit 1", OBJECT);
+            if(!empty($result)) { // If phone exist
+                $diff_time = strtotime($current_date) - strtotime($result[0]->last_request);
+                if($diff_time > 180) { // Limit Time (3 Minutes)
+                    $send_sms = SendSMS($sms_text, $_SESSION['mobile_entry']);
+                    // Update record
+                    $wpdb->update(
+                        "{$wpdb->prefix}sms_list",
+                        array (
+                            'phone' => $result[0]->phone,
+                            'token' => $assigned_code,
+                            'last_request' => $current_date
+                        ),
+                        array (
+                            'phone' => $result[0]->phone
+                        )
+                    );
+                } else {
+                    echo "exceed_time";
+                    exit;
+                }
+            } else { // If phone not exist
+                $send_sms = SendSMS($sms_text, $_SESSION['mobile_entry']);
+                $wpdb->insert(
+                    "{$wpdb->prefix}sms_list",
+                    array (
+                        'phone' => $_SESSION['mobile_entry'],
+                        'token' => $assigned_code,
+                        'last_request' => $current_date
+                    )
+                );
+            }
+
             if($send_sms == 1) {
                 echo "sent";
                 exit; 
@@ -27,7 +68,7 @@ if( isset($_POST['sts']) ) :
         else :
             echo "Err";
             exit;
-        endif;
+        endif; 
     } elseif($sts == "get-code") {
         if( isset($_POST['verify_code']) ) :
             if($_SESSION['verfied_code'] == $_POST['verify_code']) {
