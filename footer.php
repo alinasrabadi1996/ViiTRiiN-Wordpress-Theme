@@ -12,7 +12,7 @@
                                 </div>
                                 <div class="section-body">
                                     <ul class="nav-items">
-                                        <li class="item"><a href="#">پرسش های متداول</a></li>
+                                        <li class="item"><a href="<?php echo site_url(); ?>/faq/">پرسش های متداول</a></li>
                                         <li class="item"><a href="#">حریم شخصی</a></li>
                                         <li class="item"><a href="<?php echo site_url(); ?>/terms-of-service/">قوانین و مقررات</a></li>
                                         <li class="item"><a href="<?php echo site_url(); ?>/complaints/">ثبت شکایات</a></li>
@@ -36,7 +36,6 @@
                                         <li class="item"><a href="#">شرایط همکاری</a></li>
                                     </ul>
                                     <ul class="nav-items">
-                                        <li class="item chancekey-link"><a href="#">کلید شانس</a></li>
                                         <li class="item"><a href="#">تبلیغات و اسپانسر</a></li>
                                         <li class="item"><a href="#">پشتیبانی</a></li>
                                     </ul>
