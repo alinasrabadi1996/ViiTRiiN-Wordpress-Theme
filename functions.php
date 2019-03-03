@@ -149,7 +149,8 @@ function display_payment_notice() {
 
 add_action('woocommerce_after_cart_table', 'display_notice_by_cart_total_func');
 function display_notice_by_cart_total_func() {
-    $cart_total = WC()->cart->get_cart_total();
+    global $woocommerce;
+    $cart_total = $woocommerce->cart->total;
     if($cart_total >= 99000 && $cart_total < 300000) {
         echo '<p class="coupon-description" style="background: rgba(84, 62, 155, 0.8);">هدیه ویژه‌ جشنواره عیدانه ویترین یک عدد <strong>رژ لب مدادی ناتالی</strong></p>';
     } elseif($cart_total >= 300000) {
