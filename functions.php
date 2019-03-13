@@ -127,10 +127,10 @@ https://viitriin.com";
     }
 }
 
-add_action('woocommerce_checkout_before_order_review', 'display_payment_notice');
-function display_payment_notice() {
-    echo '<div id="payment_notice" style="display: none;background: #d22929;padding: 9px;color: #FFF;border-radius: 3px;margin-top: 3em;font-weight: bold;box-shadow: 0 0px 2px 0px rgba(0, 0, 0, 0.21176470588235294);font-size: 14px;border: 3px solid #bd3421;">در صورت انتخاب پرداخت آنلاین، سفارش شما در اولویت ارسال قرار گرفته و به صورت پیشتاز پست خواهد شد.</div>';
-}
+// add_action('woocommerce_checkout_before_order_review', 'display_payment_notice');
+// function display_payment_notice() {
+//     echo '<div id="payment_notice" style="display: none;background: #d22929;padding: 9px;color: #FFF;border-radius: 3px;margin-top: 3em;font-weight: bold;box-shadow: 0 0px 2px 0px rgba(0, 0, 0, 0.21176470588235294);font-size: 14px;border: 3px solid #bd3421;">در صورت انتخاب پرداخت آنلاین، سفارش شما در اولویت ارسال قرار گرفته و به صورت پیشتاز پست خواهد شد.</div>';
+// }
 
 // add_action('woocommerce_after_cart_table', 'check_product_in_cart');
 // function check_product_in_cart() {
@@ -147,16 +147,16 @@ function display_payment_notice() {
 //     echo '<p class="coupon-description" style="background: rgba(84, 62, 155, 0.8);">جشنواره زمستانه ویترین؛ علاوه بر خریدتان، یک هدیه برای شما ارسال می شود.</p>';
 // }
 
-add_action('woocommerce_after_cart_table', 'display_notice_by_cart_total_func');
-function display_notice_by_cart_total_func() {
-    global $woocommerce;
-    $cart_total = $woocommerce->cart->total;
-    if($cart_total >= 99000 && $cart_total < 300000) {
-        echo '<p class="coupon-description" style="background: rgba(84, 62, 155, 0.8);">هدیه ویژه‌ جشنواره عیدانه ویترین یک عدد <strong>رژ لب مدادی ناتالی</strong></p>';
-    } elseif($cart_total >= 300000) {
-        echo '<p class="coupon-description" style="background: rgba(84, 62, 155, 0.8);">هدیه ویژه‌ جشنواره عیدانه ویترین یک عدد <strong>رژ لب مدادی ناتالی به همراه یک کیف آرایشی</strong></p>';
-    }
-}
+// add_action('woocommerce_after_cart_table', 'display_notice_by_cart_total_func');
+// function display_notice_by_cart_total_func() {
+//     global $woocommerce;
+//     $cart_total = $woocommerce->cart->total;
+//     if($cart_total >= 99000 && $cart_total < 300000) {
+//         echo '<p class="coupon-description" style="background: rgba(84, 62, 155, 0.8);">هدیه ویژه‌ جشنواره عیدانه ویترین یک عدد <strong>رژ لب مدادی ناتالی</strong></p>';
+//     } elseif($cart_total >= 300000) {
+//         echo '<p class="coupon-description" style="background: rgba(84, 62, 155, 0.8);">هدیه ویژه‌ جشنواره عیدانه ویترین یک عدد <strong>رژ لب مدادی ناتالی به همراه یک کیف آرایشی</strong></p>';
+//     }
+// }
 
 /*
 Hook - FIX DISCOUNT PRICE (Dynamic Price Discount Plugin)
