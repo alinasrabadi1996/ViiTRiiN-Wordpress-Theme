@@ -158,10 +158,10 @@ https://viitriin.com";
 //     }
 // }
 
-add_action('woocommerce_after_cart_table', 'display_alert_in_cart_func');
-function display_alert_in_cart_func() {
-    echo '<p class="coupon-description" style="background: rgba(222, 11, 11, 0.85);">سفارشات ثبت شده، بعد از تعطیلات نوروزی ارسال می گردد.</p>';
-}
+// add_action('woocommerce_after_cart_table', 'display_alert_in_cart_func');
+// function display_alert_in_cart_func() {
+//     echo '<p class="coupon-description" style="background: rgba(222, 11, 11, 0.85);">سفارشات ثبت شده، بعد از تعطیلات نوروزی ارسال می گردد.</p>';
+// }
 
 /*
 Hook - FIX DISCOUNT PRICE (Dynamic Price Discount Plugin)
