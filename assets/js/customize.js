@@ -961,25 +961,6 @@ jQuery(".search-close-icon").click(function() {
 
 
 /*
-CHANCE KEY
-*/
-function chance_key(){
-    jQuery("#popup-chance-key").toggleClass("hide-element");
-    jQuery(".chance-key-form").toggleClass("hide-element scale-off");
-}
-
-jQuery('#popup-chance-key').click(function(e) {
-    if(!jQuery(e.target).hasClass('.chance-key-form'))
-    {
-        chance_key();
-    }
-});
-
-jQuery('.chance-key-form').click(function(event){
-     event.stopPropagation();
-});
-
-/*
 STOCK NOTIFIER 
 
 var prod_id = 0;
