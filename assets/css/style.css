@@ -7890,7 +7890,7 @@
   }
 
   @media only screen and (max-width:768px) {
-    .woocommerce ul.receipt-page li li {
+    .woocommerce ul.receipt-page li {
         flex-basis: 49%;
     }
   }
