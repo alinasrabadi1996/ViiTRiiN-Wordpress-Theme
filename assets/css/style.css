@@ -7860,6 +7860,37 @@
      color: #fff;
       border-bottom: 1px solid #eee;
   }
+
+  .receipt-page {
+    background: #FFF;
+    padding: 3rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .receipt-page li {
+    font-size: 12px;
+    margin: 0;
+    border-right: 1px solid #cecece !important;
+    padding-right: 14px;
+    border-left: 0 none;
+    margin: .5rem 0;
+    flex-grow: 1;
+    flex-basis: 24%;
+  }
+
+  .receipt-page li strong {
+    font-size: 14px;
+    margin-top: .8rem;
+  }
+
+  @media only screen and (max-width:768px) {
+    .receipt-page li {
+        flex-basis: 49%;
+    }
+  }
   
   
   

@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<ul class="order_details">
+<ul class="order_details receipt-page">
 	<li class="order">
 		<?php esc_html_e( 'Order number:', 'woocommerce' ); ?>
 		<strong><?php echo esc_html( $order->get_order_number() ); ?></strong>
