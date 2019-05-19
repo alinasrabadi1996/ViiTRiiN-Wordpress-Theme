@@ -7861,7 +7861,10 @@
       border-bottom: 1px solid #eee;
   }
 
-  .receipt-page {
+  /*
+  PAGE : RECEIPT (Step After Checkout)
+  */
+  .woocommerce ul.receipt-page {
     background: #FFF;
     padding: 3rem;
     margin-bottom: 2rem;
@@ -7870,7 +7873,7 @@
     flex-wrap: wrap;
   }
 
-  .receipt-page li {
+  .woocommerce ul.receipt-page li {
     font-size: 12px;
     margin: 0;
     border-right: 1px solid #cecece !important;
@@ -7881,18 +7884,16 @@
     flex-basis: 24%;
   }
 
-  .receipt-page li strong {
+  .woocommerce ul.receipt-page li strong {
     font-size: 14px;
     margin-top: .8rem;
   }
 
   @media only screen and (max-width:768px) {
-    .receipt-page li {
+    .woocommerce ul.receipt-page li li {
         flex-basis: 49%;
     }
   }
-  
-  
   
   
   /*
