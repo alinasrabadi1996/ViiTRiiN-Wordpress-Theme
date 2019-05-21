@@ -12,15 +12,15 @@
                                 </div>
                                 <div class="section-body">
                                     <ul class="nav-items">
-                                        <li class="item"><a href="<?php echo site_url(); ?>/faq/">پرسش های متداول</a></li>
-                                        <li class="item"><a href="#">حریم شخصی</a></li>
-                                        <li class="item"><a href="<?php echo site_url(); ?>/terms-of-service/">قوانین و مقررات</a></li>
-                                        <li class="item"><a href="<?php echo site_url(); ?>/complaints/">ثبت شکایات</a></li>
+                                        <li class="item"><a target="_blank" href="<?php echo site_url(); ?>/faq/">پرسش های متداول</a></li>
+                                        <li class="item"><a target="_blank" href="#">حریم شخصی</a></li>
+                                        <li class="item"><a target="_blank" href="<?php echo site_url(); ?>/terms-of-service/">قوانین و مقررات</a></li>
+                                        <li class="item"><a target="_blank" href="<?php echo site_url(); ?>/complaints/">ثبت شکایات</a></li>
                                     </ul>
                                     <ul class="nav-items">
-                                        <li class="item"><a href="#">راهنمای خرید</a></li>
-                                        <li class="item"><a href="<?php echo site_url(); ?>/contact-us/">تماس با ما</a></li>
-                                        <li class="item"><a href="<?php echo site_url(); ?>/about-us/">درباره ما</a></li>
+                                        <li class="item"><a target="_blank" href="#">راهنمای خرید</a></li>
+                                        <li class="item"><a target="_blank" href="<?php echo site_url(); ?>/contact-us/">تماس با ما</a></li>
+                                        <li class="item"><a target="_blank" href="<?php echo site_url(); ?>/about-us/">درباره ما</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -30,14 +30,14 @@
                                 </div>
                                 <div class="section-body">
                                     <ul class="nav-items">
-                                        <li class="item"><a href="<?php echo site_url(); ?>/dashboard/">ورود به پنل کاربری</a></li>
-                                        <li class="item"><a href="<?php echo site_url(); ?>/cart/">سبد خرید</a></li>
-                                        <li class="item"><a href="<?php echo site_url(); ?>/order-tracking/">پیگیری سفارش</a></li>
-                                        <li class="item"><a href="#">شرایط همکاری</a></li>
+                                        <li class="item"><a target="_blank" href="<?php echo site_url(); ?>/dashboard/">ورود به پنل کاربری</a></li>
+                                        <li class="item"><a target="_blank" href="<?php echo site_url(); ?>/cart/">سبد خرید</a></li>
+                                        <li class="item"><a target="_blank" href="<?php echo site_url(); ?>/order-tracking/">پیگیری سفارش</a></li>
+                                        <li class="item"><a target="_blank" href="#">شرایط همکاری</a></li>
                                     </ul>
                                     <ul class="nav-items">
-                                        <li class="item"><a href="#">تبلیغات و اسپانسر</a></li>
-                                        <li class="item"><a href="#">پشتیبانی</a></li>
+                                        <li class="item"><a target="_blank" href="#">تبلیغات و اسپانسر</a></li>
+                                        <li class="item"><a target="_blank" href="#">پشتیبانی</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -60,10 +60,10 @@
                                     </div>
                                     <div id="footer-socials">
                                         <ul>
-                                            <li class="social-item"><a href="https://www.instagram.com/viitriin_store/"><i class="icon icon-instagram"></i></a></li>
-                                            <li class="social-item"><a href="https://www.facebook.com/ViitriinCom/"><i class="icon icon-facebook"></i></a></li>
-                                            <li class="social-item"><a href="https://www.linkedin.com/in/viitriin-store/"><i class="icon icon-linkedin2"></i></a></li>
-                                            <li class="social-item"><a href="https://twitter.com/ViitriinCom"><i class="icon icon-twitter"></i></a></li>
+                                            <li class="social-item"><a target="_blank" href="https://www.instagram.com/viitriin_store/"><i class="icon icon-instagram"></i></a></li>
+                                            <li class="social-item"><a target="_blank" href="https://www.facebook.com/ViitriinCom/"><i class="icon icon-facebook"></i></a></li>
+                                            <li class="social-item"><a target="_blank" href="https://www.linkedin.com/in/viitriin-store/"><i class="icon icon-linkedin2"></i></a></li>
+                                            <li class="social-item"><a target="_blank" href="https://twitter.com/ViitriinCom"><i class="icon icon-twitter"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
