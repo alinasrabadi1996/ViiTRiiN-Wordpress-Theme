@@ -12,15 +12,15 @@
                                 </div>
                                 <div class="section-body">
                                     <ul class="nav-items">
-                                        <li class="item"><a href="<?php echo site_url(); ?>/faq/">پرسش های متداول</a></li>
-                                        <li class="item"><a href="#">حریم شخصی</a></li>
-                                        <li class="item"><a href="<?php echo site_url(); ?>/terms-of-service/">قوانین و مقررات</a></li>
-                                        <li class="item"><a href="<?php echo site_url(); ?>/complaints/">ثبت شکایات</a></li>
+                                        <li class="item"><a target="_blank" href="<?php echo site_url(); ?>/faq/">پرسش های متداول</a></li>
+                                        <li class="item"><a target="_blank" href="#">حریم شخصی</a></li>
+                                        <li class="item"><a target="_blank" href="<?php echo site_url(); ?>/terms-of-service/">قوانین و مقررات</a></li>
+                                        <li class="item"><a target="_blank" href="<?php echo site_url(); ?>/complaints/">ثبت شکایات</a></li>
                                     </ul>
                                     <ul class="nav-items">
-                                        <li class="item"><a href="#">راهنمای خرید</a></li>
-                                        <li class="item"><a href="<?php echo site_url(); ?>/contact-us/">تماس با ما</a></li>
-                                        <li class="item"><a href="<?php echo site_url(); ?>/about-us/">درباره ما</a></li>
+                                        <li class="item"><a target="_blank" href="#">راهنمای خرید</a></li>
+                                        <li class="item"><a target="_blank" href="<?php echo site_url(); ?>/contact-us/">تماس با ما</a></li>
+                                        <li class="item"><a target="_blank" href="<?php echo site_url(); ?>/about-us/">درباره ما</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -30,14 +30,14 @@
                                 </div>
                                 <div class="section-body">
                                     <ul class="nav-items">
-                                        <li class="item"><a href="<?php echo site_url(); ?>/dashboard/">ورود به پنل کاربری</a></li>
-                                        <li class="item"><a href="<?php echo site_url(); ?>/cart/">سبد خرید</a></li>
-                                        <li class="item"><a href="<?php echo site_url(); ?>/order-tracking/">پیگیری سفارش</a></li>
-                                        <li class="item"><a href="#">شرایط همکاری</a></li>
+                                        <li class="item"><a target="_blank" href="<?php echo site_url(); ?>/dashboard/">ورود به پنل کاربری</a></li>
+                                        <li class="item"><a target="_blank" href="<?php echo site_url(); ?>/cart/">سبد خرید</a></li>
+                                        <li class="item"><a target="_blank" href="<?php echo site_url(); ?>/order-tracking/">پیگیری سفارش</a></li>
+                                        <li class="item"><a target="_blank" href="#">شرایط همکاری</a></li>
                                     </ul>
                                     <ul class="nav-items">
-                                        <li class="item"><a href="#">تبلیغات و اسپانسر</a></li>
-                                        <li class="item"><a href="#">پشتیبانی</a></li>
+                                        <li class="item"><a target="_blank" href="#">تبلیغات و اسپانسر</a></li>
+                                        <li class="item"><a target="_blank" href="#">پشتیبانی</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -60,10 +60,10 @@
                                     </div>
                                     <div id="footer-socials">
                                         <ul>
-                                            <li class="social-item"><a href="https://www.instagram.com/viitriin_store/"><i class="icon icon-instagram"></i></a></li>
-                                            <li class="social-item"><a href="https://www.facebook.com/ViitriinCom/"><i class="icon icon-facebook"></i></a></li>
-                                            <li class="social-item"><a href="https://www.linkedin.com/in/viitriin-store/"><i class="icon icon-linkedin2"></i></a></li>
-                                            <li class="social-item"><a href="https://twitter.com/ViitriinCom"><i class="icon icon-twitter"></i></a></li>
+                                            <li class="social-item"><a target="_blank" href="https://www.instagram.com/viitriin_store/"><i class="icon icon-instagram"></i></a></li>
+                                            <li class="social-item"><a target="_blank" href="https://www.facebook.com/ViitriinCom/"><i class="icon icon-facebook"></i></a></li>
+                                            <li class="social-item"><a target="_blank" href="https://www.linkedin.com/in/viitriin-store/"><i class="icon icon-linkedin2"></i></a></li>
+                                            <li class="social-item"><a target="_blank" href="https://twitter.com/ViitriinCom"><i class="icon icon-twitter"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -73,12 +73,6 @@
                     </div>
                 </div>
                 <div id="footer-bottom">
-                    <div class="enamad">
-                        <img src="<?php echo get_template_uri(); ?>/images/misc/enamad-logo.png" alt="" onclick="window.open(&quot;https://trustseal.enamad.ir/Verify.aspx?id=89076&amp;p=5ONOykIjqCEUMJY7&quot;, &quot;Popup&quot;,&quot;toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=580, height=600, top=30&quot;)" style="cursor:pointer" id="5ONOykIjqCEUMJY7">			
-                    </div>
-                    <div class="enamad" id="samandehi">
-						<img id='jxlzesgtesgtesgtapfuesgtjxlz' style='cursor:pointer; padding-bottom: 16px;' onclick='window.open("https://logo.samandehi.ir/Verify.aspx?id=1000501&p=rfthobpdobpdobpddshwobpdrfth", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630, top=30")' alt='logo-samandehi' src='<?php echo get_template_uri(); ?>/images/misc/samandehi-logo.png'/>
-                    </div>
                     <p class="copyright"><small class="_txt">کلیه حقوق این وب سایت برای فروشگاه اینترنتی ویترین محفوظ می باشد.</small></o>
                 </div>
             </div>
