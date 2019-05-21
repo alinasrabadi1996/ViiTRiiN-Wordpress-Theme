@@ -63,17 +63,15 @@ get_header();
                             <ul>
                                 <li class="contact-item">
                                     <span class="meta"><i class="icon icon-pin_drop"></i>آدرس:</span>
-                                    <span class="value">تهران – خیابان سهروردی شمالی – کوچه افشار جوان – پلاک ۴۸<span>
+                                    <span class="value">تهران، خیابان بهشتی، خیابان قائم مقام فراهانی، کوچه هشتم، پلاک ۲۲، واحد ۱<span>
                                 </li>
                                 <li class="contact-item">
                                     <span class="meta"><i class="icon icon-phone"></i>تلفن تماس:</span>
-                                    <!--<span class="value ltr">۰۲۱ - ۸۸۹۳۰۵۱۱ &nbsp;&nbsp;|&nbsp;&nbsp; ۰۹۹۸۱۰۰۷۲۴۰<span>-->
-                                    <span class="value ltr">۰۹۹۸۱۰۰۷۲۴۰<span>
-                                    
+                                    <span class="value ltr">۰۲۱ - ۸۸۵۴۷۰۱۸<span>
                                 </li>
                                 <li class="contact-item">
                                     <span class="meta"><i class="icon icon-mail_outline"></i>ایمیل:</span>
-                                    <span class="value ltr">info@viitriin.com<span>
+                                    <span class="value ltr">info@vitrin.shop<span>
                                 </li>
                             </ul>
                         </div>
