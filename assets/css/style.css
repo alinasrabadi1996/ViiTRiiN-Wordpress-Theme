@@ -9547,3 +9547,34 @@
           padding: 25px 20px;
       }
   }
+
+@media only screen and (max-width: 560px) {
+    .header-col.col-left {
+        width: 100%;
+    }
+    
+    #main-header .member-area {
+        top: 0;
+        text-align: center;
+        direction: ltr;
+        border-top: 1px solid #e5e6ef;
+        padding: 1.4em 0 1em;
+    }
+    
+    #main-header .member-area .item:not(.item-button) {
+        position: absolute;
+        top: 0;
+        left: 12px;
+    }
+
+    #main-header .member-area .item:not(.item-button):nth-child(2) {
+        left: 45px;
+    }
+
+    #main-header .member-area .item-button {
+        margin: 0 4px;
+        padding: 0;
+        display: inline-block;
+        float: none;
+    }
+}
