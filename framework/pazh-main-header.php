@@ -92,12 +92,12 @@ get_template_part('framework/pazh', 'sidebar-menu'); ?>
                 <li class="item item-button">
                     <a class="button" href="<?php echo site_url(); ?>/dashboard">پنل کاربری</a>
                 </li>
-                <?php
-/*
+                <li class="item item-button discount-btn">
+                    <a class="button" href="<?php echo site_url(); ?>/discount-festival">تخفیف %X</a>
+                </li>
                 <li class="item item-button chance-key">
                     <a class="button" href="#">کلید شانس</a>
                 </li>
-*/ ?>
             </ul>
         </div>
     </div>
