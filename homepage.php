@@ -5,6 +5,7 @@ get_template_part('template-parts/content', 'slider-1');
 
 ?>
 
+<?php /*
 <section class="products products-carousel">
     <div class="products-list owl-carousel owl-theme">
         <?php
@@ -33,6 +34,31 @@ get_template_part('template-parts/content', 'slider-1');
                 endwhile;
             }
             wp_reset_postdata();
+        ?>
+    </div>
+</section>
+*/ ?>
+
+<section class="products products-carousel special-products">
+    <div class="section-heading">
+        <h3 class="title">محصولات تخفیف دار ویترین</h3>
+        <p class="desc">بهترین کالا، بیشترین تخفیف</p>
+    </div>
+    <div class="products-list owl-carousel owl-theme">
+        <?php
+        $args = array(
+            'post_type' => 'product',
+            'posts_per_page' => 15,
+            'meta_key' => 'special_product',
+            'meta_value' => true
+        );
+        $loop = new WP_Query($args);
+        if ( $loop->have_posts() ) {
+            while ( $loop->have_posts() ) : $loop->the_post();
+                wc_get_template_part( 'content', 'carousel' );
+            endwhile;
+        }
+        wp_reset_postdata();
         ?>
     </div>
 </section>

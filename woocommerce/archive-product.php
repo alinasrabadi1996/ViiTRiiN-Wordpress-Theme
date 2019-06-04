@@ -38,7 +38,7 @@
 				//$thumb_id = 165; // Default Thumb
 				?>
 				<li>
-					<img src="<?php echo wp_get_attachment_url( $thumb_id ); ?>" />
+					<?php /* <img src="<?php echo wp_get_attachment_url( $thumb_id ); ?>" /> */ ?>
 					<a href="<?php echo get_term_link($cat); ?>"><?php echo $cat->name; ?></a>
 				</li>
 				<?php endif; ?>
@@ -181,8 +181,7 @@
 				jQuery(".second-navbar-categories-icons").removeClass("translate-off");
 			}
 		}else{
-			jQuery("#main-header").css("position", "fixed");
-			jQuery("#main-header").css("top", "0");
+			jQuery(".categories-menu").removeClass("has-fixbar");
 			jQuery(".categories-header-slider").removeClass("has-fixbar");
 		}
 	});
