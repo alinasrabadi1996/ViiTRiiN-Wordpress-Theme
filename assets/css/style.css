@@ -3010,6 +3010,20 @@
     background: #2979ff;
     border-color: #2979ff;
   }
+
+    .discount-btn a {
+        animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+        0% {
+            background-color: transparent;
+        }
+        100% {
+            background-color: #e47f8c;
+            color: #FFF;
+        }
+    }
   
   #navbar-collapse {
     position: absolute;
@@ -3050,6 +3064,7 @@
       margin: 0;
       transition: top .4s ease 0s;
       opacity: 1;
+      z-index: 99999;
   } 
   
   header #navigation.active .menu-header-menu-container {
@@ -7495,7 +7510,7 @@
   */
   .products-carousel {
     margin-bottom: 2em;
-    margin-top: 2em;
+    /* margin-top: 2em; */
   }
   
   .products-carousel .products-list .product-inner {
@@ -7589,7 +7604,39 @@
   .products-carousel .owl-nav .disabled {
     opacity: 0 !important;
   }
+
+  /*
+  Special Products
+  */
+  .special-products {
+    background: #f8f8f8;
+    padding: 3rem 0;
+  }
+
+  .special-products .products-list .product-inner {
+    background: #FFF;
+  }
+
+  /*
+  Section Heading
+  */
+  .section-heading {
+      text-align: center;
+      margin-bottom: 3rem;
+  }
+
+  .section-heading .title {
+    font-size: 1.5rem;
+  }
   
+  .section-heading .desc {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    color: #3e3f48;
+    font-weight: 100;
+  }
+
+
   /*
   SLIDER
   */
@@ -9217,7 +9264,11 @@
     }
     
     .categories-menu {
-        display: none;
+        position: static;
+        margin-top: 0 !important;
+        overflow: scroll;
+        white-space: nowrap;
+        box-shadow: 7px 0 7px 1px rgba(0, 0, 0, 0.07058823529411765) inset;
     }
   
     .cart-shoping-cart {
@@ -9274,10 +9325,6 @@
     }
   
     .price-and-shop	.chance-label {
-      display: none;
-    }
-  
-    #main-header .member-area .item.chance-key {
       display: none;
     }
   
@@ -9500,4 +9547,3 @@
           padding: 25px 20px;
       }
   }
-  
