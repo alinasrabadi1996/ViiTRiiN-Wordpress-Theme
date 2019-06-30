@@ -298,72 +298,49 @@ add_filter( 'woocommerce_available_variation', 'wc_remove_variation_stock_displa
 GENERATE DISCOUNT
 */
 function discount() {
-    //$frequencies = [120, 100, 30, 20, 10, 5, 5, 5, 2, 1]; // 5 10 20 30 40 50 60 70 80 90
-    // $frequencies = [120, 100, 60, 30]; // 5 10 15 20
-    $frequencies = [120, 100]; // 5 10
+    $frequencies = [65, 70, 2, 1, 1, 1]; // 1001 1002 1003 1004 1005 1006
     $frequenciesborders = [];
     $maxfrequenciesindex = count($frequencies)-1;
     $total = 0;
     
-    for ($i = 0; $i <= $maxfrequenciesindex; $i++)
-    {
+    for ($i = 0; $i <= $maxfrequenciesindex; $i++) {
         $total = $total + $frequencies[$i];
-        if ($i == 0)
-        {
+        if ($i == 0) {
             $frequenciesborders[$i] = $frequencies[$i];
         }
-        else
-        {
+        else {
             $frequenciesborders[$i] = $frequenciesborders[$i-1] + $frequencies[$i];
         }
     }
 
-    $randomnumber = floor((mt_rand() / mt_getrandmax()) * $total) + 1;
+    $randomnumber = floor(mt_rand(1, $total-1)) + 1;
 
-    $code = 5;
+    $code = 1001;
 
     if ( ($randomnumber >= 1) && ($randomnumber <= $frequenciesborders[0]) )
     {
-        $code = 5;
+        $code = 1001;
     }
     if ( ($randomnumber >= $frequenciesborders[0] + 1) && ($randomnumber <= $frequenciesborders[1]) )
     {
-        $code = 10;
+        $code = 1002;
     }
-    /*
     if ( ($randomnumber >= $frequenciesborders[1] + 1) && ($randomnumber <= $frequenciesborders[2]) )
     {
-        $code = 15;
+        $code = 1003;
     }
     if ( ($randomnumber >= $frequenciesborders[2] + 1) && ($randomnumber <= $frequenciesborders[3]) )
     {
-        $code = 20;
+        $code = 1004;
     }
     if ( ($randomnumber >= $frequenciesborders[3] + 1) && ($randomnumber <= $frequenciesborders[4]) )
     {
-        $code = 40;
+        $code = 1005;
     }
     if ( ($randomnumber >= $frequenciesborders[4] + 1) && ($randomnumber <= $frequenciesborders[5]) )
     {
-        $code = 50;
+        $code = 1006;
     }
-    if ( ($randomnumber >= $frequenciesborders[5] + 1) && ($randomnumber <= $frequenciesborders[6]) )
-    {
-        $code = 60;
-    }
-    if ( ($randomnumber >= $frequenciesborders[6] + 1) && ($randomnumber <= $frequenciesborders[7]) )
-    {
-        $code = 70;
-    }
-    if ( ($randomnumber >= $frequenciesborders[7] + 1) && ($randomnumber <= $frequenciesborders[8]) )
-    {
-        $code = 80;
-    }
-    if ( ($randomnumber >= $frequenciesborders[8] + 1) && ($randomnumber <= $frequenciesborders[9]) )
-    {
-        $code = 90;
-    }
-    */
     return $code;
 }
 
@@ -395,6 +372,101 @@ function new_coupon($coupon_code, $amount, $user_id) {
     update_post_meta( $new_coupon_id, 'apply_before_tax', 'yes' );
     update_post_meta( $new_coupon_id, 'free_shipping', 'no' );
     update_post_meta( $new_coupon_id, 'coupon_member', $user_id );
+}
+
+function new_coupon_type2($coupon_code, $discount, $national_code, $phone) {
+    global $wpdb;
+
+    if(empty($coupon_code)
+        || empty($discount)
+        || empty($national_code)
+        || empty($phone)) {
+            return -1;
+    }
+
+    // Check User Can Get Coupon (Alrady Gived or Not)
+    $query = "SELECT * FROM {$wpdb->prefix}chancekey WHERE phone = ".$phone." ORDER BY id DESC LIMIT 1";
+    $result = $wpdb->get_results($query, ARRAY_A);
+    if($result)
+        foreach($result as $res)
+            if($res['date'] > date('Y-m-d H:i:s'))
+                return array("sts" => 0, "coupon_code" => $res['coupon_code'], "coupon_expiration" => $res['date']);
+    
+    // Insert Fuckin Coupon
+    $coupon = array(
+        'post_title' => $coupon_code,
+        'post_content' => '',
+        'post_status' => 'publish',
+        'post_author' => 1,
+        'post_type'     => 'shop_coupon'
+    );    
+    $new_coupon_id = wp_insert_post( $coupon );
+    if(!$new_coupon_id) return -1;
+
+    switch($discount) {
+        case '1001':
+            $discount_type = 'percent';
+            $amount = 0;
+            update_post_meta( $new_coupon_id, 'free_shipping', 'yes' );
+            break;
+        case '1002':
+            $discount_type = 'percent';
+            $amount = 0;
+            update_post_meta( $new_coupon_id, 'free_shipping', 'yes' );
+            update_post_meta( $new_coupon_id, 'minimum_amount', '50000' );
+            break;
+        case '1003':
+            $discount_type = 'fixed_cart';
+            $amount = '10000';
+            update_post_meta( $new_coupon_id, 'free_shipping', 'no' );
+            update_post_meta( $new_coupon_id, 'minimum_amount', '100000' );
+            break;
+        case '1004':
+            $discount_type = 'fixed_cart';
+            $amount = '50000';
+            update_post_meta( $new_coupon_id, 'free_shipping', 'no' );
+            update_post_meta( $new_coupon_id, 'minimum_amount', '100000' );
+            break;
+        case '1005':
+            $discount_type = 'percent';
+            $amount = 100;
+            update_post_meta( $new_coupon_id, 'product_ids', '609' ); // 609 => Eye Pen Choobi
+            update_post_meta( $new_coupon_id, 'limit_usage_to_x_items', '1' );
+            update_post_meta( $new_coupon_id, 'free_shipping', 'no' );
+            break;
+        case '1006':
+            $discount_type = 'percent';
+            $amount = 100;
+            update_post_meta( $new_coupon_id, 'product_ids', '767' ); // 767 -> Cream Pudre Tupi
+            update_post_meta( $new_coupon_id, 'limit_usage_to_x_items', '1' );
+            update_post_meta( $new_coupon_id, 'free_shipping', 'no' );
+            break;
+        default:
+            return -1;
+    }
+    // Add Common Coupon Details
+    update_post_meta( $new_coupon_id, 'discount_type', $discount_type );
+    update_post_meta( $new_coupon_id, 'coupon_amount', $amount );
+    update_post_meta( $new_coupon_id, 'individual_use', 'yes' );
+    update_post_meta( $new_coupon_id, 'exclude_sale_items', 'no' );
+    update_post_meta( $new_coupon_id, 'expiry_date', date("Y-m-d", strtotime("+ 3 day")) );
+    update_post_meta( $new_coupon_id, 'apply_before_tax', 'yes' );
+    update_post_meta( $new_coupon_id, 'usage_limit_per_user', '1' );
+    update_post_meta( $new_coupon_id, 'usage_limit', '1' );
+    
+    // Insert Record
+    $wpdb->insert($wpdb->prefix.'chancekey', array(
+        'national_code' => $national_code,
+        'phone' => $phone,
+        'coupon_type' => $discount,
+        'coupon_code' => $coupon_code,
+        'date' => date('Y-m-d H:i:s', strtotime(' +1 days '))
+    ));
+
+    // return 0 => Already Gived
+    // return -1 => Error
+    // return 1 => Coupon Created
+    return 1;
 }
 
 /*
@@ -549,4 +621,8 @@ function wpchris_filter_gateways( $gateways ){
     
     }
 add_filter( 'woocommerce_available_payment_gateways', 'wpchris_filter_gateways', 1);
+
+
+
+
 
