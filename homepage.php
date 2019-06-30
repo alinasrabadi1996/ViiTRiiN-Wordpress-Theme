@@ -112,4 +112,19 @@ get_template_part('template-parts/content', 'slider-1');
     </div>
 </div>
 
+
+<section id="section-chance-key" class="container-fluid">
+    <div class="row">
+        <div class="col-container">
+            <h3 class="col-title">قبل از خرید شانست رو امتحان کن!</h3>
+            <ul id="straplines">
+                <li class="col-desc">میشه تخفیف ۱۰۰ درصد باشه</li>
+                <li class="col-desc">میشه ارسال رایگان باشه</li>
+                <li class="col-desc">میشه برنده‌ی ویژه‌ی ویترین تو باشی</li>
+            </ul>
+            <button class="chance-button" onclick="chance_key()">کلیک کنید</button>
+        </div>
+    </div>
+</section>
+
 <?php get_footer(); ?>

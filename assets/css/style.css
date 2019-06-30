@@ -9578,3 +9578,240 @@
         float: none;
     }
 }
+
+
+
+
+/*
+CHANCE KEY
+*/
+#popup-chance-key {
+    position: fixed;
+    background: rgba(0,0,0,0.82);
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    top: 0;
+    transition: ease-out 0.2s;
+    -o-transition: ease-out 0.2s;
+    -moz-transition: ease-out 0.2s;
+    -webkit-transition: ease-out 0.2s;
+}
+
+.chance-key-form {
+    background: #fff;
+    width: 420px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    margin-top: -250px;
+    margin-right: -220px;
+    border-radius: 10px;
+    box-shadow: 0 10px 5px -5px rgba(0,0,0,0.2);
+    -o-box-shadow: 0 10px 5px -5px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 10px 5px -5px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0 10px 5px -5px rgba(0,0,0,0.2);
+    overflow: hidden;
+    transform: scale(0.85);
+    -o-transform: scale(0.85);
+    -moz-transform: scale(0.85);
+    -webkit-transform: scale(0.85);
+    transition: ease-out 0.2s;
+    -o-transition: ease-out 0.2s;
+    -moz-transition: ease-out 0.2s;
+    -webkit-transition: ease-out 0.2s;    
+}
+
+.change-key-image {
+    width: 100%;
+    height: 270px;
+    background: url('../images/misc/chance-key-bg.jpg');
+    background-size: cover;
+  background-position: left;
+  position: relative;
+}
+
+.change-key-image > img {
+    width: 120px;
+    left: 20px;
+    position: absolute;
+    bottom: 8px;
+}
+
+#chance-key-fields {
+  padding: 20px 0;
+  margin-top: 13px;
+}
+
+#chance-key-fields .form-field {
+    text-align: center;
+    margin-bottom: 23px;
+}
+
+.chance-key-input-boxing {
+    width: 300px;
+    background: #DDDDDD;
+    padding: 10px 20px;
+    border-radius: 30px;
+    position: relative;
+    display: inline-block;
+}
+
+.field-error .chance-key-icons {
+  color: #d43939;
+}
+
+
+.field-success .chance-key-icons {
+  color: #3db343;
+}
+
+
+.form-field label.error {
+  color: #FC3E4F;
+    width: 315px;
+    position: absolute;
+  margin-top: 3px;
+  display: block;
+    font-size: 12px;
+}
+
+#errordiv {
+  margin: 2em;
+  background: #FFF;
+  padding: 1em;
+}
+
+#errordiv label {
+  display: block;
+}
+
+.chance-key-icons {
+    float: right;
+    margin: 0px -5px 0 7px;
+    font-size: 20px;
+    color: #7c7d80;  
+}
+
+.submit-chance-key {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    border: none;
+    background: #FC3E4F;
+    color: #FFFFFF;
+    padding: 15px 10px;
+    font-size: 17px;
+    font-family: "IranYekan";
+}
+
+.chance-key-input {
+    width: 85%;
+    background: transparent;
+    border: none;
+    color: #727276;
+    outline: none !important;
+}
+
+.close-chance-key {
+    position: absolute;
+    color: #ed484d;
+    margin: 10px;
+    left: 0;
+    cursor: pointer;
+    z-index: 99999;
+    top: 1px;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 5px;
+    background: #FFF;
+    border-radius: 50%;
+}
+
+#chance-loading {
+    position: absolute;
+    bottom: -37px;
+  right: 0;
+  display: none;
+}
+
+#chance-key-response {
+    text-align: center;
+    margin-top: 17px;
+}
+
+#chance-key-response .title {
+  font-size: 25px;
+  color: #4CAF50;
+}
+
+#chance-key-response .title.spacing {
+  padding: 0 2em;
+  font-size: 23px;
+  line-height: 37px;
+  color: #42434a;
+}
+
+#chance-key-response .desc {
+    font-size: 20px;
+    margin-top: 10px;
+    color: #4CAF50;
+}
+
+#chance-key-error {
+    position: absolute;
+    right: 64px;
+    margin-top: 6px;
+}
+
+#chance-key-error .fail {
+    color: #de5454;
+    font-size: 13px;
+}
+
+#chance-key-response .coupon-code {
+  margin-top: 15px;
+  display: inline-block;
+  border: 1px solid #d3d5da;
+  padding: 9px 8px 8px;
+  font-family: IranSans;
+  color: #4a4954;
+  font-size: 14px;
+}
+
+#chance-key-response .expire-timer {
+  position: relative;
+}
+
+#chance-key-response .expire-timer .title {
+  font-size: 14px;
+    margin-top: 18px;
+  font-weight: bold;
+  color: #35333a;
+}
+
+#chance-key-response .expire-timer #exp_countdown {
+    display: block;
+    text-align: center;
+    font-size: 21px;
+    font-weight: 900;
+    letter-spacing: 6px;
+    color: #f5877b;
+    margin-top: 5px;
+}
+
+#chance-key-response .fail {
+  font-size: 16px;
+  padding: 0 18px;
+  color: #d24545;
+  line-height: 37px;
+}
+
+#national_code::-webkit-outer-spin-button,
+#national_code::-webkit-inner-spin-button,
+#billing_phone::-webkit-outer-spin-button,
+#billing_phone::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
