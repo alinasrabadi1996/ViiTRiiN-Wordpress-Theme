@@ -67,7 +67,7 @@ get_header();
                                 </li>
                                 <li class="contact-item">
                                     <span class="meta"><i class="icon icon-phone"></i>تلفن تماس:</span>
-                                    <span class="value ltr">۰۲۱ - ۸۸۵۴۷۰۱۸ &nbsp;&nbsp;|&nbsp;&nbsp; ۰۹۹۸۱۰۰۷۲۴۰<span>
+                                    <span class="value ltr">پشتیبانی: ۰۹۹۸۱۰۰۷۲۴۰<span>
                                 </li>
                                 <li class="contact-item">
                                     <span class="meta"><i class="icon icon-mail_outline"></i>ایمیل:</span>
