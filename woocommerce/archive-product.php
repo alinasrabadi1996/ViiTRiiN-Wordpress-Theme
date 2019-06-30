@@ -203,7 +203,7 @@
 		const onShowVariation = function (event, variation, purchasable) {
 			event.preventDefault();
 			const $stockVariation = $('#stock_variation');
-			console.log('onShowVariation: %o ', {purchasable});
+			// console.log('onShowVariation: %o ', {purchasable});
 			if (purchasable) {
 				$stockVariation.css({
 					display: 'none',

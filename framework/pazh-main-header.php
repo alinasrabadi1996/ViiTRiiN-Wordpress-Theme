@@ -1,6 +1,35 @@
 <?php
 get_template_part('framework/pazh', 'sidebar-menu'); ?>
 
+<div id="popup-chance-key" class="hide-element">
+    <div class="chance-key-form hide-element">
+        <i class="icon-close close-chance-key" onclick="chance_key()"></i>
+        <div class="change-key-image">
+            <img src="<?php echo get_template_uri(); ?>/images/branding/logo.png">
+        </div>
+        <div id="chance-loading"><img src="<?php echo get_template_uri(); ?>/images/misc/chance-animate.gif"></div>
+        <div id="chance-key-error"></div>
+        <div id="chance-key-fields">
+            <form name="chance-key-form" id="chance-key-form" method="post" action="">
+                <div class="form-field">
+                    <div class="chance-key-input-boxing">
+                        <i class="icon-account_box chance-key-icons"></i>
+                        <input name="national_code" id="national_code" type="number" placeholder="کد ملی" class="chance-key-input" required>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <div class="chance-key-input-boxing">
+                        <i class="icon-phone chance-key-icons"></i>
+                        <input name="billing_phone" id="billing_phone" type="number" placeholder="شماره همراه" class="chance-key-input" required>
+                    </div>
+                </div>
+                <input type="submit" name="chance-key-submit" id="chance-key-submit" class="submit-chance-key" value="ثبت">
+            </form>
+        </div>
+        <div id="chance-key-response"></div>
+    </div>
+</div>
+
 <div class="md-modal" id="notifire-box">
     <div class="md-modal-overlay md-modal-toggle"></div>
     <div class="md-modal-wrapper md-modal-transition">

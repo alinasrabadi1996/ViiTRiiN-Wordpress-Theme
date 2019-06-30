@@ -151,10 +151,12 @@ https://viitriin.com";
 // function display_notice_by_cart_total_func() {
 //     global $woocommerce;
 //     $cart_total = $woocommerce->cart->total;
-//     if($cart_total >= 99000 && $cart_total < 300000) {
-//         echo '<p class="coupon-description" style="background: rgba(84, 62, 155, 0.8);">هدیه ویژه‌ جشنواره عیدانه ویترین یک عدد <strong>رژ لب مدادی ناتالی</strong></p>';
+//     if($cart_total >= 150000 && $cart_total < 200000) {
+//         echo '<p class="coupon-description" style="background: rgba(84, 62, 155, 0.8);">جشنواره عید فطر ویترین <strong>علاوه بر خریدتان، یک رژ لب به صورت هدیه برای شما ارسال می گردد.</strong></p>';
+//     } elseif($cart_total >= 200000 && $cart_total < 300000 ) {
+//         echo '<p class="coupon-description" style="background: rgba(84, 62, 155, 0.8);">جشنواره عید فطر ویترین <strong>علاوه بر خریدتان، یک رژ لب و سایه به صورت هدیه برای شما ارسال می گردد.</strong></p>';
 //     } elseif($cart_total >= 300000) {
-//         echo '<p class="coupon-description" style="background: rgba(84, 62, 155, 0.8);">هدیه ویژه‌ جشنواره عیدانه ویترین یک عدد <strong>رژ لب مدادی ناتالی به همراه یک کیف آرایشی</strong></p>';
+//         echo '<p class="coupon-description" style="background: rgba(84, 62, 155, 0.8);">جشنواره عید فطر ویترین <strong>علاوه بر خریدتان، یک کرم پودر مینی آمیتیس به صورت هدیه برای شما ارسال می گردد.</strong></p>';
 //     }
 // }
 

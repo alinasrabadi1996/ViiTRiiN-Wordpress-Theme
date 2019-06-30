@@ -128,7 +128,7 @@ $pages = array('profile', 'orders', 'creadits', 'logout', 'methods');
                     </div>
                     <input type="hidden" name="verification_sts" id="verification_sts" value="get-mobile">
                 </form>
-                <div id="loading" style="display: none;"><img class="loader" src="http://webstatic.net/projects/viitriin.com/images/misc/loading_64.gif" alt="loading"></div>
+                <div id="loading" style="display: none;"><img class="loader" src="<?php echo get_template_directory_uri(); ?>/assets/images/misc/loading_64.gif" alt="loading"></div>
             </div>
             <?php } ?>
         </div>
