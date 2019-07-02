@@ -99,7 +99,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 					<div class="help-header-backgruond"></div>
 					<div class="help-texts">
 						<h3>ارسال رایگان توسط ویترین</h3>
-                        <p>با خرید بیشتر از 100,000 تومان از ارسال رایگان به تمام نقاط کشور بهره‌مند شوید.</p>
+                        <p>با خرید بیشتر از 200,000 تومان از ارسال رایگان به تمام نقاط کشور بهره‌مند شوید.</p>
                     </div>
 					<div class="help-seperator"></div>
 					<div class="help-texts">
