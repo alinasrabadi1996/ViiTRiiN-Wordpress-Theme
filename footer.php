@@ -243,10 +243,10 @@
                                 var congText = "";
                                 switch(response.discount) {
                                     case 1001:
-                                        congText = "ارسال رایگان درب منزل شما!";
+                                        congText = "ارسال رایگان (حداقل خرید ۱۰۰ هزار تومان)!";
                                         break;
                                     case 1002:
-                                        congText = "ارسال رایگان (حداقل خرید ۵۰ هزار تومان)!";
+                                        congText = "ارسال رایگان (حداقل خرید ۱۵۰ هزار تومان)!";
                                         break;
                                     case 1003:
                                         congText = "۱۰,۰۰۰ تومان تخفیف!";

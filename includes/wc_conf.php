@@ -408,12 +408,13 @@ function new_coupon_type2($coupon_code, $discount, $national_code, $phone) {
             $discount_type = 'percent';
             $amount = 0;
             update_post_meta( $new_coupon_id, 'free_shipping', 'yes' );
+            update_post_meta( $new_coupon_id, 'minimum_amount', '100000' );
             break;
         case '1002':
             $discount_type = 'percent';
             $amount = 0;
             update_post_meta( $new_coupon_id, 'free_shipping', 'yes' );
-            update_post_meta( $new_coupon_id, 'minimum_amount', '50000' );
+            update_post_meta( $new_coupon_id, 'minimum_amount', '150000' );
             break;
         case '1003':
             $discount_type = 'fixed_cart';
