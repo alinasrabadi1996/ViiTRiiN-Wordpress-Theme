@@ -298,7 +298,7 @@ add_filter( 'woocommerce_available_variation', 'wc_remove_variation_stock_displa
 GENERATE DISCOUNT
 */
 function discount() {
-    $frequencies = [65, 70, 2, 1, 1, 1]; // 1001 1002 1003 1004 1005 1006
+    $frequencies = [70, 10, 2, 2, 2, 1, 1]; // 1001 1002 1003 1004 1005 1006 1007
     $frequenciesborders = [];
     $maxfrequenciesindex = count($frequencies)-1;
     $total = 0;
@@ -340,6 +340,10 @@ function discount() {
     if ( ($randomnumber >= $frequenciesborders[4] + 1) && ($randomnumber <= $frequenciesborders[5]) )
     {
         $code = 1006;
+    }
+    if ( ($randomnumber >= $frequenciesborders[5] + 1) && ($randomnumber <= $frequenciesborders[6]) )
+    {
+        $code = 1007;
     }
     return $code;
 }
@@ -405,42 +409,56 @@ function new_coupon_type2($coupon_code, $discount, $national_code, $phone) {
 
     switch($discount) {
         case '1001':
+            // 1001-> درصد ارسال رایگان
             $discount_type = 'percent';
             $amount = 0;
             update_post_meta( $new_coupon_id, 'free_shipping', 'yes' );
-            update_post_meta( $new_coupon_id, 'minimum_amount', '100000' );
             break;
         case '1002':
-            $discount_type = 'percent';
-            $amount = 0;
-            update_post_meta( $new_coupon_id, 'free_shipping', 'yes' );
-            update_post_meta( $new_coupon_id, 'minimum_amount', '150000' );
-            break;
-        case '1003':
+            // 1002-> بن خرید ده هزار تومانی برای خریدهای بالای صد تومان
             $discount_type = 'fixed_cart';
             $amount = '10000';
             update_post_meta( $new_coupon_id, 'free_shipping', 'no' );
             update_post_meta( $new_coupon_id, 'minimum_amount', '100000' );
             break;
-        case '1004':
-            $discount_type = 'fixed_cart';
-            $amount = '50000';
-            update_post_meta( $new_coupon_id, 'free_shipping', 'no' );
-            update_post_meta( $new_coupon_id, 'minimum_amount', '100000' );
-            break;
-        case '1005':
+        case '1003':
+            // 1003-> بن خرید مداد چشم چوبی امیتیس
             $discount_type = 'percent';
             $amount = 100;
             update_post_meta( $new_coupon_id, 'product_ids', '609' ); // 609 => Eye Pen Choobi
             update_post_meta( $new_coupon_id, 'limit_usage_to_x_items', '1' );
             update_post_meta( $new_coupon_id, 'free_shipping', 'no' );
             break;
-        case '1006':
+        case '1004':
+            // 1004->  بن خرید رژلب کلیک کلیک دوسه
             $discount_type = 'percent';
             $amount = 100;
-            update_post_meta( $new_coupon_id, 'product_ids', '767' ); // 767 -> Cream Pudre Tupi
+            update_post_meta( $new_coupon_id, 'product_ids', '1543' ); // 1543 => Click Click
             update_post_meta( $new_coupon_id, 'limit_usage_to_x_items', '1' );
             update_post_meta( $new_coupon_id, 'free_shipping', 'no' );
+            break;
+        case '1005':
+            // 1005->  بن خرید رژ لب جامد مینرال دوسه (۲۱۲۸)
+            $discount_type = 'percent';
+            $amount = 100;
+            update_post_meta( $new_coupon_id, 'product_ids', '2128' ); // 2128 => Minral Doucce
+            update_post_meta( $new_coupon_id, 'limit_usage_to_x_items', '1' );
+            update_post_meta( $new_coupon_id, 'free_shipping', 'no' );
+            break;
+        case '1006':
+            // 1006->  بن خرید کرم پودر تیوپی امیتیس
+            $discount_type = 'percent';
+            $amount = 100;
+            update_post_meta( $new_coupon_id, 'product_ids', '767' ); // 767 => Minral Doucce
+            update_post_meta( $new_coupon_id, 'limit_usage_to_x_items', '1' );
+            update_post_meta( $new_coupon_id, 'free_shipping', 'no' );
+            break;
+        case '1007':
+            // 1007->  بن خرید پنجاه هزار تومانی برای خریدهای بالای صد هزار تومان
+            $discount_type = 'fixed_cart';
+            $amount = '50000';
+            update_post_meta( $new_coupon_id, 'free_shipping', 'no' );
+            update_post_meta( $new_coupon_id, 'minimum_amount', '100000' );
             break;
         default:
             return -1;

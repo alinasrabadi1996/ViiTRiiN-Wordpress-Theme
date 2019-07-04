@@ -243,22 +243,25 @@
                                 var congText = "";
                                 switch(response.discount) {
                                     case 1001:
-                                        congText = "ارسال رایگان (حداقل خرید ۱۰۰ هزار تومان)!";
+                                        congText = "ارسال رایگان به تمامی نقاط کشور!";
                                         break;
                                     case 1002:
-                                        congText = "ارسال رایگان (حداقل خرید ۱۵۰ هزار تومان)!";
-                                        break;
-                                    case 1003:
                                         congText = "۱۰,۰۰۰ تومان تخفیف!";
                                         break;
+                                    case 1003:
+                                        congText = "مداد چشم چوبی آمیتیس!";
+                                        break;
                                     case 1004:
-                                        congText = "۵۰,۰۰۰ تومان تخفیف!";
+                                        congText = "رژ لب کلیک کلیک دوسه!";
                                         break;
                                     case 1005:
-                                        congText = "مداد چشم شمعی آمیتیس";
+                                        congText = "رژ لب  مینرال جامد دوسه!";
                                         break;
                                     case 1006: 
-                                        congText = "کرم پودر تیوپی آمیتیس";
+                                        congText = "کرم پودر تیوپی آمیتیس!";
+                                        break;
+                                    case 1007: 
+                                        congText = "۵۰,۰۰۰ تومان تخفیف!";
                                         break;
                                 }
                                 jQuery("#chance-key-response").html('<h3 class="title">تبریک شما برنده شدید</h3><h4 class="desc">'+congText+'</h4><div class="coupon-code">کد تخفیف به موبایل شما پیامک می‌شود</div> ' + ' <div class="expire-timer"><h4 class="title">زمان باقی مانده تا شانس بعدی</h3><span id="exp_countdown"></span></div>');
