@@ -131,4 +131,4 @@ get_template_part('framework/pazh', 'sidebar-menu'); ?>
         </div>
     </div>
 </header>
-<div class="main-wrapper woocommerce">
+<div class="main-wrapper <?php if(function_exists("is_shop")) echo 'woocommerce'; ?>">

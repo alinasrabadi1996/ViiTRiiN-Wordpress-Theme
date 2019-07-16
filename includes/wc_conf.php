@@ -480,7 +480,7 @@ function new_coupon_type2($coupon_code, $discount, $national_code, $phone) {
             $discount_type = 'fixed_cart';
             $amount = '50000';
             update_post_meta( $new_coupon_id, 'free_shipping', 'no' );
-            update_post_meta( $new_coupon_id, 'minimum_amount', '100000' );
+            update_post_meta( $new_coupon_id, 'minimum_amount', '150000' );
             break;
         default:
             return -1;
