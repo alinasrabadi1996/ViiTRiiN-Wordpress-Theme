@@ -272,12 +272,12 @@
                                 }
                                 jQuery("#chance-key-response").html('<h3 class="title">تبریک شما برنده شدید</h3><h4 class="desc">'+congText+'</h4><div class="coupon-code">کد تخفیف به موبایل شما پیامک می‌شود</div> ' + ' <div class="expire-timer"><h4 class="title">زمان باقی مانده تا شانس بعدی</h3><span id="exp_countdown"></span></div>');
                                 jQuery('#exp_countdown').countdown('<?php echo date('Y-m-d H:i:s', strtotime(' +72 hours ')); ?>', function(event) {
-                                    jQuery(this).html(event.strftime('%H:%M:%S'));
+                                    jQuery(this).html(event.strftime('%d:%H:%M:%S'));
                                 });
                             } else if (response.sts == 0) { 
                                 jQuery("#chance-key-response").html('<h3 class="title spacing">شما امروز از کلید شانس خود استفاده کرده‌اید!</h3>' + '<div class="expire-timer"><h4 class="title">زمان باقی مانده تا شانس بعدی</h3><span id="exp_countdown"></span></div>');
                                 jQuery('#exp_countdown').countdown(response.expire, function(event) {
-                                    jQuery(this).html(event.strftime('%H:%M:%S'));
+                                    jQuery(this).html(event.strftime('%d:%H:%M:%S'));
                                 });
                             } else {
                                 jQuery("#chance-key-error").html('<h3 class="fail">خطایی رخ داده است!<br> لطفا مجدد تلاش کنید.</h3>');
