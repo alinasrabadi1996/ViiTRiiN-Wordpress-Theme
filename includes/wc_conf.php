@@ -401,7 +401,7 @@ function new_coupon_type2($coupon_code, $discount, $national_code, $phone) {
     $result = $wpdb->get_results($query, ARRAY_A);
     if($result)
         foreach($result as $res)
-            if($res['date'] > date('Y-m-d H:i:s'))
+            if( date('Y-m-d H:i:s', strtotime($res['date'] . '+2 days')) > date('Y-m-d H:i:s') ) // +2 days = Expire Time(+1 days in db) + 48H == 72H
                 return array("sts" => 0, "coupon_code" => $res['coupon_code'], "coupon_expiration" => $res['date']);
     
     // Insert Fuckin Coupon
