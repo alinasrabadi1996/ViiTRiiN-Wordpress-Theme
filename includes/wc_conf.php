@@ -399,10 +399,16 @@ function new_coupon_type2($coupon_code, $discount, $national_code, $phone) {
     // Check User Can Get Coupon (Alrady Gived or Not)
     $query = "SELECT * FROM {$wpdb->prefix}chancekey WHERE phone = ".$phone." ORDER BY id DESC LIMIT 1";
     $result = $wpdb->get_results($query, ARRAY_A);
-    if($result)
-        foreach($result as $res)
+    if($result) {
+        foreach($result as $res) {
             if($res['date'] > date('Y-m-d H:i:s'))
                 return array("sts" => 0, "coupon_code" => $res['coupon_code'], "coupon_expiration" => $res['date']);
+            
+            // Taking Chance If User Already Winner!
+            if($res['coupon_code'] >= 1005)
+                $discount = 1001;
+        }
+    }
     
     // Insert Fuckin Coupon
     $coupon = array(
