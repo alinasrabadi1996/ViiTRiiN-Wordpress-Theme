@@ -403,10 +403,6 @@ function new_coupon_type2($coupon_code, $discount, $national_code, $phone) {
         foreach($result as $res) {
             if($res['date'] > date('Y-m-d H:i:s'))
                 return array("sts" => 0, "coupon_code" => $res['coupon_code'], "coupon_expiration" => $res['date']);
-            
-            // Taking Chance If User Already Winner!
-            if($res['coupon_type'] >= 1005)
-                $discount = 1001;
         }
     }
     
